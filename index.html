@@ -61,7 +61,7 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Installation.html" />
+    <link rel="next" href="Comparison.html" />
     
     
 
@@ -104,7 +104,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="Installation.html">
+        <li class="chapter " data-level="1.2" data-path="Comparison.html">
+            
+                <a href="Comparison.html">
+            
+                    
+                    Comparison with other tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Installation.html">
             
                 <a href="Installation.html">
             
@@ -117,7 +130,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="GettingStarted.html">
+        <li class="chapter " data-level="1.4" data-path="GettingStarted.html">
             
                 <a href="GettingStarted.html">
             
@@ -518,6 +531,33 @@
 <li>a deployment tool - instead, use your target environment&apos;s existing tooling (eg. kubectl) from within a batect task</li>
 <li>a CI tool - instead, use your existing CI tool and have it run batect</li>
 </ul>
+<h2 id="why-would-i-use-batect">Why would I use batect?</h2>
+<p>Every application has a build environment - the tools and configuration needed to take the source code and produce an artifact
+ready for use.</p>
+<p>However, setting this up can be time consuming and frustrating. Too often new team members&apos; first experience on
+a project is a few days working out which tools they need to install, and another few days of then discovering the magic
+combination of tool versions that will happily coexist. And as the application evolves and changes over time, maintaining and
+updating this environment across all developers&apos; machines and CI agents can be incredibly painful.</p>
+<p>Similarly, most applications have external dependencies - for example, other services, databases, caches, credential storage
+systems... the list is endless. Because of this, we would like to run integration, component or journey tests where the
+application itself (or some part of it) interacts with these external dependencies.</p>
+<p>In some cases, we&apos;d like to use a real instance of it (eg. a running Postgres instance), and in other cases, we&apos;d like to use a
+fake (eg. a fake implementation of a downstream service). Either way, installing, configuring and managing all these dependencies
+takes a lot of work, and making sure they&apos;re in a known state before a test run is key to reducing test flakiness. Add in networking
+gremlins, different operating systems, personal preferences, built-up cruft and manual configuration and you end up with an enormous
+number of variables that lead to a huge amount of wasted time spent debugging issues that are entirely preventable.</p>
+<p>batect helps solve these problems by:</p>
+<ul>
+<li>allowing you to entirely automate the setup of your build and testing environments</li>
+<li>storing this automation alongside your application code, so that it is versioned and updated just like any other part of
+your application</li>
+<li>ensuring that every single command invocation starts with a completely fresh environment based on your configuration file,
+making it impossible to get out-of-sync from the desired state</li>
+<li>making use of Docker to do all of this in an isolated and low-overhead way</li>
+<li>using some smart dependency management logic, parallelism and Docker&apos;s caching features to do all of this very, very quickly</li>
+<li>taking advantage of Docker&apos;s networking features to set up an isolated network for every command</li>
+<li>enabling you to use existing Docker images as-is (or easily use custom Dockerfiles) to quickly get up and running</li>
+</ul>
 
                                 
                                 </section>
@@ -546,7 +586,7 @@
             
                 
                 
-                <a href="Installation.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Installation">
+                <a href="Comparison.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Comparison with other tools">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -557,7 +597,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Installation","level":"1.2","depth":1,"path":"Installation.md","ref":"Installation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","github","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/charleskorn/batect"},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-63947227-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Charles Korn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"Introduction.md","glossary":"GLOSSARY.md","summary":"Contents.md"},"variables":{},"title":"batect documentation","language":"en","gitbook":"*","description":"Documentation for batect, the build and testing environments as code tool"},"file":{"path":"Introduction.md","mtime":"2018-03-25T09:31:38.247Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-25T09:35:36.054Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Comparison with other tools","level":"1.2","depth":1,"path":"Comparison.md","ref":"Comparison.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","github","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/charleskorn/batect"},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-63947227-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Charles Korn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"Introduction.md","glossary":"GLOSSARY.md","summary":"Contents.md"},"variables":{},"title":"batect documentation","language":"en","gitbook":"*","description":"Documentation for batect, the build and testing environments as code tool"},"file":{"path":"Introduction.md","mtime":"2018-03-25T10:10:13.664Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-25T10:13:27.759Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

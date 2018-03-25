@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Installation · batect documentation</title>
+        <title>Comparison with other tools · batect documentation</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="GettingStarted.html" />
+    <link rel="next" href="Installation.html" />
     
     
-    <link rel="prev" href="Comparison.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -106,7 +106,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="Comparison.html">
+        <li class="chapter active" data-level="1.2" data-path="Comparison.html">
             
                 <a href="Comparison.html">
             
@@ -119,7 +119,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="Installation.html">
+        <li class="chapter " data-level="1.3" data-path="Installation.html">
             
                 <a href="Installation.html">
             
@@ -500,7 +500,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Installation</a>
+        <a href="." >Comparison with other tools</a>
     </h1>
 </div>
 
@@ -515,18 +515,26 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="installation">Installation</h1>
-<p>The <code>batect</code> script is designed to be committed alongside your project, and not installed globally. It will
-automatically pull down the correct version of batect for your operating system.</p>
-<ol>
-<li>Download the latest version of <code>batect</code> from the <a href="https://github.com/charleskorn/batect/releases" target="_blank">releases page</a>,
-and copy it into your project.</li>
-<li>Make sure it&apos;s executable (run <code>chmod +x batect</code>).</li>
-<li>Run <code>./batect --version</code> and if you see some version information, you&apos;re good to go!</li>
-</ol>
-<p>Note that a JVM (version 8 or above) must be installed to use batect. (This requirement will be removed in a future release.)</p>
-<p>Now you&apos;re ready to configure batect for your project - check out the <a href="GettingStarted.html">getting started tutorial</a>, dive into the
-<a href="config/Overview.html">configuration file reference</a>, or take a look at one of the <a href="SampleProjects.html">sample projects</a>.</p>
+                                <h1 id="comparison-with-other-tools">Comparison with other tools</h1>
+<p>How does batect compare to...</p>
+<h2 id="vagrant">...Vagrant?</h2>
+<p>Vagrant&apos;s use of virtual machines means that it is very heavyweight, making it difficult to run multiple projects&apos;
+environments at once. This is especially problematic on CI servers where we&apos;d like to run multiple builds in parallel.</p>
+<p>Furthermore, the long-lived nature of virtual machines means that it&apos;s very easy for a developer&apos;s machine to get out of sync
+with the desired configuration, and nothing automatically re-provisions the machine when the configuration is changed - a
+developer has to remember to re-run the provisioning step if the configuration changes.</p>
+<h2 id="using-shell-scripts-to-drive-docker">...using shell scripts to drive Docker?</h2>
+<p>While it&apos;s certainly possible, it quickly gets unwieldy and is difficult to effectively parallelise tasks that can run in parallel.</p>
+<h2 id="docker-compose">...Docker Compose?</h2>
+<p>In the past, I&apos;ve used Docker Compose to implement the same idea that is at the core of batect. However, using Docker Compose
+for this purpose has a number of drawbacks.</p>
+<p>In particular, Docker Compose is geared towards configuring an application and its dependencies and deploying this whole stack
+to something like Docker Swarm. Its CLI is designed with this purpose in mind, making it frustrating to use day-to-day as a development
+tool and necessitating the use of a higher-level script to automate its usage.</p>
+<p>It also does not elegantly support pulling together a set of containers in different configurations (eg. integration vs journey
+testing), does each operation serially (instead of parallelising operations where possible) and has
+<a href="https://github.com/docker/compose/issues/4369" target="_blank">one long-standing bug</a> that makes waiting for containers to report as healthy
+difficult.</p>
 
                                 
                                 </section>
@@ -554,12 +562,12 @@ and copy it into your project.</li>
 
             
                 
-                <a href="Comparison.html" class="navigation navigation-prev " aria-label="Previous page: Comparison with other tools">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="GettingStarted.html" class="navigation navigation-next " aria-label="Next page: Getting started tutorial">
+                <a href="Installation.html" class="navigation navigation-next " aria-label="Next page: Installation">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -570,7 +578,7 @@ and copy it into your project.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Installation","level":"1.3","depth":1,"next":{"title":"Getting started tutorial","level":"1.4","depth":1,"path":"GettingStarted.md","ref":"GettingStarted.md","articles":[]},"previous":{"title":"Comparison with other tools","level":"1.2","depth":1,"path":"Comparison.md","ref":"Comparison.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","github","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/charleskorn/batect"},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-63947227-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Charles Korn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"Introduction.md","glossary":"GLOSSARY.md","summary":"Contents.md"},"variables":{},"title":"batect documentation","language":"en","gitbook":"*","description":"Documentation for batect, the build and testing environments as code tool"},"file":{"path":"Installation.md","mtime":"2018-03-25T10:10:13.664Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-25T10:13:27.759Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Comparison with other tools","level":"1.2","depth":1,"next":{"title":"Installation","level":"1.3","depth":1,"path":"Installation.md","ref":"Installation.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"Introduction.md","ref":"Introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","github","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/charleskorn/batect"},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-63947227-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Charles Korn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"Introduction.md","glossary":"GLOSSARY.md","summary":"Contents.md"},"variables":{},"title":"batect documentation","language":"en","gitbook":"*","description":"Documentation for batect, the build and testing environments as code tool"},"file":{"path":"Comparison.md","mtime":"2018-03-25T10:10:13.664Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-25T10:13:27.759Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
