@@ -1,0 +1,660 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Proxies · batect documentation</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Charles Korn">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../SampleProjects.html" />
+    
+    
+    <link rel="prev" href="WaitingForDependenciesToBeReady.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Installation.html">
+            
+                <a href="../Installation.html">
+            
+                    
+                    Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../GettingStarted.html">
+            
+                <a href="../GettingStarted.html">
+            
+                    
+                    Getting started tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Configuration file reference</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../config/Overview.html">
+            
+                <a href="../config/Overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../config/Containers.html">
+            
+                <a href="../config/Containers.html">
+            
+                    
+                    Containers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../config/Tasks.html">
+            
+                <a href="../config/Tasks.html">
+            
+                    
+                    Tasks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Language and tool-specific information</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../tools/Java.html">
+            
+                <a href="../tools/Java.html">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../tools/Java.html">
+            
+                <a href="../tools/Java.html#gradle">
+            
+                    
+                    Gradle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../tools/Ruby.html">
+            
+                <a href="../tools/Ruby.html">
+            
+                    
+                    Ruby
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../tools/Ruby.html">
+            
+                <a href="../tools/Ruby.html#bundler">
+            
+                    
+                    Bundler
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../tools/Docker.html">
+            
+                <a href="../tools/Docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../tools/Docker.html">
+            
+                <a href="../tools/Docker.html#building-and-pushing-an-image">
+            
+                    
+                    Building and pushing an image
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tips and tricks</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="CISetup.html">
+            
+                <a href="CISetup.html">
+            
+                    
+                    CI setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="IDEIntegration.html">
+            
+                <a href="IDEIntegration.html">
+            
+                    
+                    IDE integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="Performance.html">
+            
+                <a href="Performance.html">
+            
+                    
+                    Performance
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="Performance.html">
+            
+                <a href="Performance.html#io-performance">
+            
+                    
+                    I/O performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="Performance.html">
+            
+                <a href="Performance.html#database-schema-and-test-data">
+            
+                    
+                    Database schema and test data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="Performance.html">
+            
+                <a href="Performance.html#shutdown-time">
+            
+                    
+                    Shutdown time
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="BuildArtifactsOwnedByRoot.html">
+            
+                <a href="BuildArtifactsOwnedByRoot.html">
+            
+                    
+                    Build artifacts are owned by root
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="WaitingForDependenciesToBeReady.html">
+            
+                <a href="WaitingForDependenciesToBeReady.html">
+            
+                    
+                    Waiting for dependencies to be ready
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.6" data-path="Proxies.html">
+            
+                <a href="Proxies.html">
+            
+                    
+                    Proxies
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../SampleProjects.html">
+            
+                <a href="../SampleProjects.html">
+            
+                    
+                    Sample projects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <a target="_blank" href="https://github.com/charleskorn/batect/releases">
+            
+                    
+                    Release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <a target="_blank" href="https://github.com/charleskorn/batect/blob/master/ROADMAP.md">
+            
+                    
+                    Roadmap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Proxies</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="proxies-docker-and-batect">Proxies, Docker and batect</h1>
+<p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p><strong>tl;dr</strong>: batect will do its best to make things just work with proxies, with the exception of pulling images</p>
+</div></div></p>
+<p>Most applications expect to find proxy configuration in a number of environment variables. The most common are:</p>
+<ul>
+<li><code>http_proxy</code>: proxy to use for HTTP requests</li>
+<li><code>https_proxy</code>: proxy to use for HTTPS requests</li>
+<li><code>ftp_proxy</code>: proxy to use for FTP requests</li>
+<li><code>no_proxy</code>: comma-separated list of domains or addresses for which connections should bypass the proxy (ie.
+be direct to the destination)</li>
+</ul>
+<p>There are three points where a proxy could be required during the lifecycle of a container:</p>
+<ol>
+<li>at image pull time</li>
+<li>at build time, after the image has been pulled</li>
+<li>at run time</li>
+</ol>
+<p>Each of these are handled slightly differently by Docker, and so batect does its best to make your life easier.</p>
+<h2 id="at-image-pull-time">At image pull time</h2>
+<p>When pulling an image, the Docker daemon uses any proxy-related environment variables in the Docker daemon&apos;s
+environment to determine whether or not to use a proxy. These settings cannot be set at image pull time, so
+batect can&apos;t handle these settings for you - you must configure them yourself.</p>
+<p>On OS X, Docker defaults to using your system&apos;s proxy settings, and you can change these by going to the Docker icon &gt;
+Preferences &gt; Proxies.</p>
+<p>On Linux, you may need to configure the Docker daemon&apos;s proxy settings yourself.
+<a href="https://docs.docker.com/engine/admin/systemd/#httphttps-proxy" target="_blank">This page in the Docker documentation</a> gives an example of
+how to configure a Docker daemon running with systemd.</p>
+<h2 id="at-build-time-after-the-image-has-been-pulled">At build time, after the image has been pulled</h2>
+<p>After pulling the base image, all subsequent build steps use the environment variables of the build environment, which is a
+combination of:</p>
+<ul>
+<li>any environment variables defined in the base image with <code>ENV</code> instructions</li>
+<li>any build arguments defined in the Dockerfile with <code>ARG</code> instructions</li>
+<li>any environment variables defined in the Dockerfile with <code>ENV</code> instructions</li>
+<li>any of the <a href="https://docs.docker.com/engine/reference/builder/#predefined-args" target="_blank">pre-defined build arguments</a>, if a value is
+provided for them</li>
+</ul>
+<p>This last point is the most relevant to proxy settings - as <code>http_proxy</code>, <code>https_proxy</code>, <code>no_proxy</code> etc. are defined as
+pre-defined build arguments, we can pass the host&apos;s proxy settings into the build environment as build arguments.</p>
+<p>batect automatically propagates any proxy settings configured on the host as build arguments unless the <code>--no-proxy-vars</code>
+flag is passed to <code>batect</code>.</p>
+<p>Note that build arguments are not persisted in the image - they exist only as environment variables at build time. Furthermore,
+the pre-defined proxy-related build arguments (unlike normal build arguments) do not impact Docker&apos;s cache invalidation logic -
+so if an image build succeeded with <code>http_proxy</code> set to <code>http://brokenproxy</code>, changing <code>http_proxy</code> to <code>http://workingproxy</code> will
+not cause a rebuild. (The reasoning behind this is that if the build has succeeded with one proxy, then switching to another
+proxy should have no impact.)</p>
+<h2 id="at-run-time">At run time</h2>
+<p>The set of run time environment variables is defined by:</p>
+<ul>
+<li>any environment variables defined in the image (including any base images) with <code>ENV</code> instructions</li>
+<li>any container-specific environment variables specified in the container or task in <code>batect.yml</code></li>
+</ul>
+<p>batect automatically propagates any proxy settings configured on the host as environment variables unless the <code>--no-proxy-vars</code>
+flag is passed to <code>batect</code>.</p>
+<h2 id="proxy-settings-recognised-by-batect">Proxy settings recognised by batect</h2>
+<p>batect will propagate the following proxy-related environment variables:</p>
+<ul>
+<li><code>http_proxy</code></li>
+<li><code>HTTP_PROXY</code></li>
+<li><code>https_proxy</code></li>
+<li><code>HTTPS_PROXY</code></li>
+<li><code>ftp_proxy</code></li>
+<li><code>FTP_PROXY</code></li>
+<li><code>no_proxy</code></li>
+<li><code>NO_PROXY</code></li>
+</ul>
+<p>Note that batect will not add missing environment variables if only one in a pair is defined. (For example, if <code>http_proxy</code> is
+defined, but <code>HTTP_PROXY</code> isn&apos;t, then only <code>http_proxy</code> is propagated and <code>HTTP_PROXY</code> is left unset.)</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="WaitingForDependenciesToBeReady.html" class="navigation navigation-prev " aria-label="Previous page: Waiting for dependencies to be ready">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../SampleProjects.html" class="navigation navigation-next " aria-label="Next page: Sample projects">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Proxies","level":"4.6","depth":1,"next":{"title":"Sample projects","level":"5.1","depth":1,"path":"SampleProjects.md","ref":"SampleProjects.md","articles":[]},"previous":{"title":"Waiting for dependencies to be ready","level":"4.5","depth":1,"path":"tips/WaitingForDependenciesToBeReady.md","ref":"tips/WaitingForDependenciesToBeReady.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","github","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/charleskorn/batect"},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-63947227-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Charles Korn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"Introduction.md","glossary":"GLOSSARY.md","summary":"Contents.md"},"variables":{},"title":"batect documentation","language":"en","gitbook":"*","description":"Documentation for batect, the build and testing environments as code tool"},"file":{"path":"tips/Proxies.md","mtime":"2018-03-25T07:24:16.804Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-25T08:29:33.307Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

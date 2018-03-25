@@ -1,0 +1,610 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>IDE integration · batect documentation</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Charles Korn">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Performance.html" />
+    
+    
+    <link rel="prev" href="CISetup.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Installation.html">
+            
+                <a href="../Installation.html">
+            
+                    
+                    Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../GettingStarted.html">
+            
+                <a href="../GettingStarted.html">
+            
+                    
+                    Getting started tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Configuration file reference</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../config/Overview.html">
+            
+                <a href="../config/Overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../config/Containers.html">
+            
+                <a href="../config/Containers.html">
+            
+                    
+                    Containers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../config/Tasks.html">
+            
+                <a href="../config/Tasks.html">
+            
+                    
+                    Tasks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Language and tool-specific information</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../tools/Java.html">
+            
+                <a href="../tools/Java.html">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../tools/Java.html">
+            
+                <a href="../tools/Java.html#gradle">
+            
+                    
+                    Gradle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../tools/Ruby.html">
+            
+                <a href="../tools/Ruby.html">
+            
+                    
+                    Ruby
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../tools/Ruby.html">
+            
+                <a href="../tools/Ruby.html#bundler">
+            
+                    
+                    Bundler
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../tools/Docker.html">
+            
+                <a href="../tools/Docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../tools/Docker.html">
+            
+                <a href="../tools/Docker.html#building-and-pushing-an-image">
+            
+                    
+                    Building and pushing an image
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tips and tricks</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="CISetup.html">
+            
+                <a href="CISetup.html">
+            
+                    
+                    CI setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.2" data-path="IDEIntegration.html">
+            
+                <a href="IDEIntegration.html">
+            
+                    
+                    IDE integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="Performance.html">
+            
+                <a href="Performance.html">
+            
+                    
+                    Performance
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="Performance.html">
+            
+                <a href="Performance.html#io-performance">
+            
+                    
+                    I/O performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="Performance.html">
+            
+                <a href="Performance.html#database-schema-and-test-data">
+            
+                    
+                    Database schema and test data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="Performance.html">
+            
+                <a href="Performance.html#shutdown-time">
+            
+                    
+                    Shutdown time
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="BuildArtifactsOwnedByRoot.html">
+            
+                <a href="BuildArtifactsOwnedByRoot.html">
+            
+                    
+                    Build artifacts are owned by root
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="WaitingForDependenciesToBeReady.html">
+            
+                <a href="WaitingForDependenciesToBeReady.html">
+            
+                    
+                    Waiting for dependencies to be ready
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="Proxies.html">
+            
+                <a href="Proxies.html">
+            
+                    
+                    Proxies
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../SampleProjects.html">
+            
+                <a href="../SampleProjects.html">
+            
+                    
+                    Sample projects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <a target="_blank" href="https://github.com/charleskorn/batect/releases">
+            
+                    
+                    Release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <a target="_blank" href="https://github.com/charleskorn/batect/blob/master/ROADMAP.md">
+            
+                    
+                    Roadmap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >IDE integration</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="ide-integration">IDE integration</h1>
+<p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p><strong>tl;dr</strong>: some IDEs can&apos;t provide their advanced features (eg. code completion) when using batect, but there are solutions</p>
+</div></div></p>
+<p>Many IDEs rely on having the development environment installed locally in order to provide features like code completion,
+analysis and tool integration. (For example, a Ruby IDE might need access to a Ruby runtime, and a Java IDE might need
+the target JVM to be installed.) However, if you&apos;re using batect, then all of this is in a container and so the IDE can&apos;t
+access it.</p>
+<p>Some solutions for this include:</p>
+<ul>
+<li>Some of the JetBrains family of products natively supports using a SDK or runtime from a container (PyCharm and RubyMine
+are known to work, although notably IntelliJ does not currently support this). There&apos;s more information on how to configure
+this in the <a href="https://www.jetbrains.com/help/pycharm/configuring-remote-interpreters-via-docker.html" target="_blank">PyCharm docs</a> and
+<a href="https://www.jetbrains.com/help/ruby/configuring-remote-interpreters-via-docker.html" target="_blank">RubyMine docs</a>.</li>
+<li>You could run a text-based editor such as Vim or Emacs in a container (managed by batect, of course) that has your
+required runtime components installed alongside it.</li>
+</ul>
+<p>(Have you tried something else that worked? Or do you use another IDE or text editor that supports using runtimes inside a
+container? Please <a href="https://github.com/charleskorn/batect/pulls" target="_blank">submit a PR</a> to add to the list above.)</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="CISetup.html" class="navigation navigation-prev " aria-label="Previous page: CI setup">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Performance.html" class="navigation navigation-next " aria-label="Next page: Performance">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"IDE integration","level":"4.2","depth":1,"next":{"title":"Performance","level":"4.3","depth":1,"path":"tips/Performance.md","ref":"tips/Performance.md","articles":[{"title":"I/O performance","level":"4.3.1","depth":2,"anchor":"#io-performance","path":"tips/Performance.md","ref":"tips/Performance.md#io-performance","articles":[]},{"title":"Database schema and test data","level":"4.3.2","depth":2,"anchor":"#database-schema-and-test-data","path":"tips/Performance.md","ref":"tips/Performance.md#database-schema-and-test-data","articles":[]},{"title":"Shutdown time","level":"4.3.3","depth":2,"anchor":"#shutdown-time","path":"tips/Performance.md","ref":"tips/Performance.md#shutdown-time","articles":[]}]},"previous":{"title":"CI setup","level":"4.1","depth":1,"path":"tips/CISetup.md","ref":"tips/CISetup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","github","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/charleskorn/batect"},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-63947227-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Charles Korn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"Introduction.md","glossary":"GLOSSARY.md","summary":"Contents.md"},"variables":{},"title":"batect documentation","language":"en","gitbook":"*","description":"Documentation for batect, the build and testing environments as code tool"},"file":{"path":"tips/IDEIntegration.md","mtime":"2018-03-19T09:45:59.921Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-25T08:29:33.307Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

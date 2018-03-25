@@ -1,0 +1,774 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Getting started tutorial · batect documentation</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Charles Korn">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="config/Overview.html" />
+    
+    
+    <link rel="prev" href="Installation.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Installation.html">
+            
+                <a href="Installation.html">
+            
+                    
+                    Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="GettingStarted.html">
+            
+                <a href="GettingStarted.html">
+            
+                    
+                    Getting started tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Configuration file reference</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="config/Overview.html">
+            
+                <a href="config/Overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="config/Containers.html">
+            
+                <a href="config/Containers.html">
+            
+                    
+                    Containers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="config/Tasks.html">
+            
+                <a href="config/Tasks.html">
+            
+                    
+                    Tasks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Language and tool-specific information</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="tools/Java.html">
+            
+                <a href="tools/Java.html">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="tools/Java.html">
+            
+                <a href="tools/Java.html#gradle">
+            
+                    
+                    Gradle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="tools/Ruby.html">
+            
+                <a href="tools/Ruby.html">
+            
+                    
+                    Ruby
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="tools/Ruby.html">
+            
+                <a href="tools/Ruby.html#bundler">
+            
+                    
+                    Bundler
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="tools/Docker.html">
+            
+                <a href="tools/Docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="tools/Docker.html">
+            
+                <a href="tools/Docker.html#building-and-pushing-an-image">
+            
+                    
+                    Building and pushing an image
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tips and tricks</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="tips/CISetup.html">
+            
+                <a href="tips/CISetup.html">
+            
+                    
+                    CI setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="tips/IDEIntegration.html">
+            
+                <a href="tips/IDEIntegration.html">
+            
+                    
+                    IDE integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="tips/Performance.html">
+            
+                <a href="tips/Performance.html">
+            
+                    
+                    Performance
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="tips/Performance.html">
+            
+                <a href="tips/Performance.html#io-performance">
+            
+                    
+                    I/O performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="tips/Performance.html">
+            
+                <a href="tips/Performance.html#database-schema-and-test-data">
+            
+                    
+                    Database schema and test data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="tips/Performance.html">
+            
+                <a href="tips/Performance.html#shutdown-time">
+            
+                    
+                    Shutdown time
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="tips/BuildArtifactsOwnedByRoot.html">
+            
+                <a href="tips/BuildArtifactsOwnedByRoot.html">
+            
+                    
+                    Build artifacts are owned by root
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="tips/WaitingForDependenciesToBeReady.html">
+            
+                <a href="tips/WaitingForDependenciesToBeReady.html">
+            
+                    
+                    Waiting for dependencies to be ready
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="tips/Proxies.html">
+            
+                <a href="tips/Proxies.html">
+            
+                    
+                    Proxies
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="SampleProjects.html">
+            
+                <a href="SampleProjects.html">
+            
+                    
+                    Sample projects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <a target="_blank" href="https://github.com/charleskorn/batect/releases">
+            
+                    
+                    Release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <a target="_blank" href="https://github.com/charleskorn/batect/blob/master/ROADMAP.md">
+            
+                    
+                    Roadmap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Getting started tutorial</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="getting-started-tutorial">Getting started tutorial</h1>
+<p>The samples shown below are taken from the <a href="https://github.com/charleskorn/batect-sample-java" target="_blank">Java sample project</a>.</p>
+<h2 id="installation">Installation</h2>
+<p>Before you begin, follow the <a href="Installation.html">installation steps</a> to setup batect.</p>
+<h2 id="first-steps-build-environment">First steps: build environment</h2>
+<p>To start, we&apos;re going to configure a simple build environment, where you can build your application and run unit
+tests. This example is for a Java project that uses Gradle, and assumes that you already have Gradle set up for your project.</p>
+<ol>
+<li><p>Create a <code>batect.yml</code> configuration file in the root of your project. For example:</p>
+<pre><code class="lang-yaml"><span class="hljs-attr"> containers:</span>
+<span class="hljs-attr">   build-env:</span>
+<span class="hljs-attr">     image:</span> openjdk:<span class="hljs-number">8</span>u141-jdk
+<span class="hljs-attr">     volumes:</span>
+<span class="hljs-attr">       - local:</span> .
+<span class="hljs-attr">         container:</span> /code
+<span class="hljs-attr">         options:</span> cached
+<span class="hljs-attr">       - local:</span> .gradle-cache
+<span class="hljs-attr">         container:</span> /root/.gradle
+<span class="hljs-attr">         options:</span> cached
+<span class="hljs-attr">     working_directory:</span> /code
+<span class="hljs-attr">     environment:</span>
+<span class="hljs-bullet">       -</span> GRADLE_OPTS=-Dorg.gradle.daemon=<span class="hljs-literal">false</span>
+
+<span class="hljs-attr"> tasks:</span>
+<span class="hljs-attr">   build:</span>
+<span class="hljs-attr">     description:</span> Build the application.
+<span class="hljs-attr">     run:</span>
+<span class="hljs-attr">       container:</span> build-env
+<span class="hljs-attr">       command:</span> ./gradlew assembleDist
+
+<span class="hljs-attr">   unitTest:</span>
+<span class="hljs-attr">     description:</span> Run the unit tests.
+<span class="hljs-attr">     run:</span>
+<span class="hljs-attr">       container:</span> build-env
+<span class="hljs-attr">       command:</span> ./gradlew test
+</code></pre>
+<p>There&apos;s a bit going on here, so let&apos;s break it down:</p>
+<ul>
+<li><code>project_name</code>: the name of your project.</li>
+<li><code>containers</code>: here we define the different containers that your application needs.
+At the moment, we just have our one build environment container, <code>build-env</code>.<ul>
+<li>We tell batect which Docker image to use (<code>image</code>).</li>
+<li>We tell it to mount the project (<code>.</code>, the current directory) into the container at <code>/code</code>, and to start
+the container in that directory (<code>working_directory</code>).</li>
+<li>We also mount <code>.gradle-cache</code> into the container as <code>/root/.gradle</code> - this allows Gradle to cache
+dependencies between builds, rather than downloading them on every single run. (You probably want to
+add this directory to your <code>.gitignore</code>.)</li>
+<li>We use <code>:cached</code> mode for the mounts to improve performance on OS X (see
+<a href="tips/Performance.html#io-performance">this page</a> for more information). This has no effect on other operating systems.</li>
+<li>We disable the <a href="https://docs.gradle.org/current/userguide/gradle_daemon.html" target="_blank">Gradle daemon</a>, as running
+it is pointless given that we create a new container for every run.</li>
+</ul>
+</li>
+<li><p><code>tasks</code>: we define our two tasks, one for building the application, and another for running the unit tests.
+These just run the existing Gradle tasks within the build environment we just defined.</p>
+<p>You can define whatever tasks you want - common other tasks you might like to add include one that starts a
+shell in the build environment (eg. one with <code>command: bash</code>) and another that automatically runs the unit
+tests whenever the code is changed (eg. <code>command: ./gradlew --continuous test</code>).</p>
+</li>
+</ul>
+<p>For more information on <code>batect.yml</code>, consult the <a href="config/Overview.html">documentation</a>.</p>
+</li>
+<li><p>Run <code>./batect --list-tasks</code>, and you&apos;ll see the tasks that we just defined:</p>
+<pre><code> Available tasks:
+ - build: Build the application.
+ - unitTest: Run the unit tests.
+</code></pre></li>
+<li><p>Run <code>./batect build</code> and batect will pull the image used for your build environment, start it and run Gradle within it.
+(Note that this may take a while the first time as the Docker image must be downloaded first.)</p>
+</li>
+<li><p>Similarly, if you run <code>./batect unitTest</code>, batect will start a build environment, run your unit tests within it, and then
+clean up the build environment.</p>
+</li>
+</ol>
+<p>That&apos;s it! Your builds and unit tests now run in an isolated and consistent build environment, and you can easily change the
+configuration of your build environment without having to install or configure anything manually on every developer or CI machine.</p>
+<h2 id="taking-it-further-integration-and-journey-test-environments">Taking it further: integration and journey test environments</h2>
+<p>So we&apos;ve set up an isolated and repeatable build environment. However, where batect really shines is setting up integration and
+journey test environments - environments that require spinning up real (or fake) versions of dependencies such as databases or downstream services.</p>
+<p>Let&apos;s imagine our application just has one dependency, a Postgres database. We can define a Docker image for this with a Dockerfile:</p>
+<pre><code class="lang-dockerfile"><span class="hljs-keyword">FROM</span> postgres:<span class="hljs-number">9.6</span>.<span class="hljs-number">2</span>
+</code></pre>
+<p>Save this as <code>dev-infrastructure/database/Dockerfile</code>.</p>
+<p>So far, so good - this is just like what we had before for the build environment. However, this will start an empty Postgres database,
+and our application probably needs at least a database and a table or two. Create a SQL script called <code>create-structure.sql</code> that creates
+your database tables and save it in the <code>dev-infrastructure/database</code> folder you just created.</p>
+<p>We can then take advantage of a feature of the <a href="https://hub.docker.com/r/library/postgres/" target="_blank">standard Postgres image</a> to have this SQL
+script run when the container starts. Any <code>.sql</code> file in the <code>/docker-entrypoint-initdb.d</code> directory will automatically be run when
+the container starts, so if we copy our <code>create-structure.sql</code> script into that directory in the image, then whenever it is started,
+our database structure will be created. So our Dockerfile now looks like:</p>
+<pre><code class="lang-dockerfile"><span class="hljs-keyword">FROM</span> postgres:<span class="hljs-number">9.6</span>.<span class="hljs-number">2</span>
+
+<span class="hljs-keyword">COPY</span> <span class="bash">create-structure.sql /docker-entrypoint-initdb.d/
+</span></code></pre>
+<p>There&apos;s one last thing we need to think about though. When Docker starts our database container, all we know is that the container has
+started - we have no way to know if the database is actually ready for use. If we want to run tests against our database, we don&apos;t want
+to start running those tests until it&apos;s actually ready to use. While Postgres is usually pretty fast to start up, it&apos;s not instantaneous,
+and other things can take anywhere from a few moments to a minute or two to start up and be ready. We can use
+<a href="https://docs.docker.com/engine/reference/builder/#healthcheck" target="_blank">Docker&apos;s health check feature</a> to indicate when a container is ready for use.</p>
+<p>In our case, we can take <a href="https://github.com/charleskorn/batect-sample-java/tree/master/dev-infrastructure/database/health-check.sh" target="_blank">the health check script</a>
+from the sample project and copy it into our <code>dev-infrastructure/database</code> folder. All it does is try to issue a simple query against the
+database - if that succeeds, we can assume that the database is up and running. (There&apos;s
+<a href="https://github.com/docker-library/healthcheck/" target="_blank">a collection of sample health check scripts provided by Docker</a> you can use.)</p>
+<p>Then we need to tell Docker where to find our health check script, so we need to add it to our Dockerfile:</p>
+<pre><code class="lang-dockerfile"><span class="hljs-keyword">FROM</span> postgres:<span class="hljs-number">9.6</span>.<span class="hljs-number">2</span>
+
+<span class="hljs-keyword">RUN</span> <span class="bash">mkdir -p /tools
+</span><span class="hljs-keyword">COPY</span> <span class="bash">health-check.sh /tools/
+</span>HEALTHCHECK --interval=2s <span class="hljs-keyword">CMD</span> /tools/health-check.sh
+
+<span class="hljs-keyword">COPY</span> <span class="bash">create-structure.sql /docker-entrypoint-initdb.d/
+</span></code></pre>
+<p>So, now we have a Dockerfile that describes how to start up our database, and how to tell when it&apos;s ready for use. Now we just need to configure
+batect to run our tests.</p>
+<p>First of all, let&apos;s define our database container:</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">containers:</span>
+
+  ...
+
+<span class="hljs-attr">  database:</span>
+<span class="hljs-attr">    build_directory:</span> dev-infrastructure/database
+<span class="hljs-attr">    environment:</span>
+<span class="hljs-bullet">      -</span> POSTGRES_USER=international-transfers-service-user
+<span class="hljs-bullet">      -</span> POSTGRES_PASSWORD=TheSuperSecretPassword
+<span class="hljs-bullet">      -</span> POSTGRES_DB=international-transfers-service
+</code></pre>
+<p>This uses the environment variables defined by the Postgres image to set the username, password and database name to use to connect to it. We
+could have specified them in the Dockerfile with <code>ENV</code> statements, but this works as well.</p>
+<p>Then we just need to define our integration test task:</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">tasks:</span>
+
+  ...
+
+<span class="hljs-attr">  integrationTest:</span>
+<span class="hljs-attr">    description:</span> Run the integration tests.
+<span class="hljs-attr">    run:</span>
+<span class="hljs-attr">      container:</span> build-env
+<span class="hljs-attr">      command:</span> ./gradlew integrationTest
+<span class="hljs-attr">    start:</span>
+<span class="hljs-bullet">      -</span> database
+</code></pre>
+<p>This is just like the build and unit test tasks we defined before, but we now also specify our database container in <code>start</code>. batect will start
+any containers listed in <code>start</code> and wait for them to become healthy before starting the container given in <code>run</code>.</p>
+<p>Under the covers, batect will also create an isolated network for all of the task&apos;s containers, so that they can communicate with one another
+without interfering with anything else on your machine. (They&apos;ll still have access to the internet and anything else they could access if they
+were running directly on your machine though.) This means that the integration tests just need to connect to the host <code>database</code> with the username
+<code>international-transfers-service-user</code> and password <code>TheSuperSecretPassword</code>, and Docker will automatically forward that to the database container.</p>
+<p>And, after your tests have finished, batect will then remove all the containers it started, leaving your machine in the same state it was before
+you started.</p>
+<p>Similarly, if we want to run some journey tests that test our application end-to-end, we just need to create a Dockerfile for our application,
+then define it in <code>batect.yml</code>:</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">containers:</span>
+
+  ...
+
+<span class="hljs-attr">  international-transfers-service:</span>
+<span class="hljs-attr">    build_directory:</span> dev-infrastructure/international-transfers-service
+<span class="hljs-attr">    dependencies:</span>
+<span class="hljs-bullet">      -</span> database
+</code></pre>
+<p>...and then add a task:</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">tasks:</span>
+
+  ...
+
+<span class="hljs-attr">  journeyTest:</span>
+<span class="hljs-attr">    description:</span> Run the journey tests.
+<span class="hljs-attr">    run:</span>
+<span class="hljs-attr">      container:</span> build-env
+<span class="hljs-attr">      command:</span> ./gradlew journeyTest
+<span class="hljs-attr">    start:</span>
+<span class="hljs-bullet">      -</span> international-transfers-service
+<span class="hljs-attr">    prerequisites:</span>
+<span class="hljs-bullet">      -</span> build
+</code></pre>
+<p>Note that in this case, we specify that the database container is a dependency of the application container - this means that batect will first
+start the database container and wait for it to become healthy, then start the application and wait for it to become healthy, and then run the
+journey tests. We also specify that the build task should run before starting the journey tests - this is so that when we start the application,
+we start the most recent version of it.</p>
+<h2 id="where-next">Where next?</h2>
+<p>There&apos;s a comprehensive <a href="config/Overview.html">reference page for the configuration file</a>, and a number of <a href="SampleProjects.html">sample applications</a>
+you can take a look at.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Installation.html" class="navigation navigation-prev " aria-label="Previous page: Installation">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="config/Overview.html" class="navigation navigation-next " aria-label="Next page: Overview">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Getting started tutorial","level":"1.3","depth":1,"next":{"title":"Overview","level":"2.1","depth":1,"path":"config/Overview.md","ref":"config/Overview.md","articles":[]},"previous":{"title":"Installation","level":"1.2","depth":1,"path":"Installation.md","ref":"Installation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","github","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/charleskorn/batect"},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-63947227-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Charles Korn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"Introduction.md","glossary":"GLOSSARY.md","summary":"Contents.md"},"variables":{},"title":"batect documentation","language":"en","gitbook":"*","description":"Documentation for batect, the build and testing environments as code tool"},"file":{"path":"GettingStarted.md","mtime":"2018-03-25T07:24:16.802Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-25T08:29:33.307Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

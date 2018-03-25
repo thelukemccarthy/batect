@@ -1,0 +1,680 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Tasks · batect documentation</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Charles Korn">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../tools/Java.html" />
+    
+    
+    <link rel="prev" href="Containers.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Installation.html">
+            
+                <a href="../Installation.html">
+            
+                    
+                    Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../GettingStarted.html">
+            
+                <a href="../GettingStarted.html">
+            
+                    
+                    Getting started tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Configuration file reference</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="Overview.html">
+            
+                <a href="Overview.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="Containers.html">
+            
+                <a href="Containers.html">
+            
+                    
+                    Containers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3" data-path="Tasks.html">
+            
+                <a href="Tasks.html">
+            
+                    
+                    Tasks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Language and tool-specific information</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../tools/Java.html">
+            
+                <a href="../tools/Java.html">
+            
+                    
+                    Java
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../tools/Java.html">
+            
+                <a href="../tools/Java.html#gradle">
+            
+                    
+                    Gradle
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../tools/Ruby.html">
+            
+                <a href="../tools/Ruby.html">
+            
+                    
+                    Ruby
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../tools/Ruby.html">
+            
+                <a href="../tools/Ruby.html#bundler">
+            
+                    
+                    Bundler
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../tools/Docker.html">
+            
+                <a href="../tools/Docker.html">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../tools/Docker.html">
+            
+                <a href="../tools/Docker.html#building-and-pushing-an-image">
+            
+                    
+                    Building and pushing an image
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tips and tricks</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../tips/CISetup.html">
+            
+                <a href="../tips/CISetup.html">
+            
+                    
+                    CI setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../tips/IDEIntegration.html">
+            
+                <a href="../tips/IDEIntegration.html">
+            
+                    
+                    IDE integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../tips/Performance.html">
+            
+                <a href="../tips/Performance.html">
+            
+                    
+                    Performance
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../tips/Performance.html">
+            
+                <a href="../tips/Performance.html#io-performance">
+            
+                    
+                    I/O performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="../tips/Performance.html">
+            
+                <a href="../tips/Performance.html#database-schema-and-test-data">
+            
+                    
+                    Database schema and test data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="../tips/Performance.html">
+            
+                <a href="../tips/Performance.html#shutdown-time">
+            
+                    
+                    Shutdown time
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../tips/BuildArtifactsOwnedByRoot.html">
+            
+                <a href="../tips/BuildArtifactsOwnedByRoot.html">
+            
+                    
+                    Build artifacts are owned by root
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../tips/WaitingForDependenciesToBeReady.html">
+            
+                <a href="../tips/WaitingForDependenciesToBeReady.html">
+            
+                    
+                    Waiting for dependencies to be ready
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../tips/Proxies.html">
+            
+                <a href="../tips/Proxies.html">
+            
+                    
+                    Proxies
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../SampleProjects.html">
+            
+                <a href="../SampleProjects.html">
+            
+                    
+                    Sample projects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <a target="_blank" href="https://github.com/charleskorn/batect/releases">
+            
+                    
+                    Release notes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <a target="_blank" href="https://github.com/charleskorn/batect/blob/master/ROADMAP.md">
+            
+                    
+                    Roadmap
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Tasks</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="task-definitions">Task definitions</h1>
+<p>Each task definition is made up of:</p>
+<h2 id="description"><code>description</code></h2>
+<p>Description shown when running <code>batect --list-tasks</code>.</p>
+<h2 id="run"><code>run</code></h2>
+<p>Specifies what to do when this task starts:</p>
+<ul>
+<li><p><code>container</code> <a href="Containers.html">Container</a> to run for this task. <strong>Required.</strong></p>
+</li>
+<li><p><code>command</code> Command to run for this task.</p>
+<p>Overrides any command specified on the container definition and the default image command. If no command is provided here, the command
+specified on the container definition is used if there is one, otherwise the image&apos;s default command is used.</p>
+</li>
+<li><p><code>environment</code> List of environment variables (in <code>name=value</code> format) for the container.</p>
+<p>If a variable is specified both here and on the container itself, the value given here will override the value defined on the container.
+Just like when <a href="Containers.html#environment">specifying a variable directly on the container</a>, you can pass variables from the host to the
+container in the <code>CONTAINER_VARIABLE=$HOST_VARIABLE</code> format. If the referenced host variable is not present, batect will show an error
+message and not start the task.</p>
+</li>
+</ul>
+<h2 id="dependencies"><code>dependencies</code></h2>
+<p>List of other containers that should be started and healthy before starting the task container given in <code>run</code>.</p>
+<p>The behaviour is the same as if the dependencies were specified for the <code>dependencies</code> property of the task&apos;s container&apos;s definition.</p>
+<h2 id="start"><code>start</code></h2>
+<p>Alias for <code>dependencies</code>. If both <code>dependencies</code> and <code>start</code> are given, the behaviour is undefined.</p>
+<p><strong>Deprecated</strong> (since v0.12): use <code>dependencies</code> instead.</p>
+<h2 id="prerequisites"><code>prerequisites</code></h2>
+<p>List of other tasks that should be run before running this task.</p>
+<p>If a prerequisite task finishes with a non-zero exit code, then neither this task nor any other prerequisites will be run.</p>
+<h2 id="examples">Examples</h2>
+<p>For more examples and real-world scenarios, take a look at the <a href="../SampleProjects.html">sample projects</a>.</p>
+<h3 id="minimal-configuration">Minimal configuration</h3>
+<pre><code class="lang-yaml"><span class="hljs-attr">tasks:</span>
+<span class="hljs-attr">  start-app:</span>
+<span class="hljs-attr">    run:</span>
+<span class="hljs-attr">      container:</span> app
+</code></pre>
+<p>Running the task <code>start-app</code> will start the <code>app</code> container.</p>
+<p>The container will run the command provided in the container configuration (or the default command in the image if there is no command
+given for the container definition).</p>
+<h3 id="task-with-prerequisites">Task with prerequisites</h3>
+<pre><code class="lang-yaml"><span class="hljs-attr">tasks:</span>
+<span class="hljs-attr">  build:</span>
+<span class="hljs-attr">    run:</span>
+<span class="hljs-attr">      container:</span> build-env
+<span class="hljs-attr">      command:</span> build.sh
+
+<span class="hljs-attr">  start-app:</span>
+<span class="hljs-attr">    run:</span>
+<span class="hljs-attr">      container:</span> app
+<span class="hljs-attr">    prerequisites:</span>
+<span class="hljs-bullet">      -</span> build
+</code></pre>
+<p>Running the task <code>start-app</code> will first run the <code>build</code> task (which runs <code>build.sh</code> in the <code>build-env</code> container), and then run the <code>app</code> container.</p>
+<p>If the command <code>build.sh</code> exits with a non-zero exit code, <code>start-app</code> will not be run.</p>
+<h3 id="task-with-dependencies">Task with dependencies</h3>
+<pre><code class="lang-yaml"><span class="hljs-attr">tasks:</span>
+<span class="hljs-attr">  start-app:</span>
+<span class="hljs-attr">    run:</span>
+<span class="hljs-attr">      container:</span> app
+<span class="hljs-attr">    dependencies:</span>
+<span class="hljs-bullet">      -</span> database
+<span class="hljs-bullet">      -</span> auth-service-fake
+</code></pre>
+<p>Running the task <code>start-app</code> will do the following:</p>
+<ol>
+<li>Build or pull the images for the <code>app</code>, <code>database</code> and <code>auth-service-fake</code> containers, as appropriate</li>
+<li>Start the <code>database</code> and <code>auth-service-fake</code> containers</li>
+<li>Wait for the <code>database</code> and <code>auth-service-fake</code> containers to report themselves as healthy
+(<a href="../tips/WaitingForDependenciesToBeReady.html">if they have health checks defined</a>)</li>
+<li>Start the <code>app</code> container</li>
+</ol>
+<h3 id="task-with-environment-variables">Task with environment variables</h3>
+<pre><code class="lang-yaml"><span class="hljs-attr">tasks:</span>
+<span class="hljs-attr">  start-app:</span>
+<span class="hljs-attr">    run:</span>
+<span class="hljs-attr">      container:</span> app
+<span class="hljs-attr">      environment:</span>
+<span class="hljs-bullet">        -</span> ENABLE_COOL_NEW_FEATURE=<span class="hljs-literal">true</span>
+<span class="hljs-bullet">        -</span> SUPER_SECRET_VALUE=$SECRET_PASSWORD
+</code></pre>
+<p>Running the task <code>start-app</code> will start the <code>app</code> container with the following environment variables:</p>
+<ul>
+<li>The environment variable <code>ENABLE_COOL_NEW_FEATURE</code> will have value <code>true</code>.</li>
+<li>The environment variable <code>SUPER_SECRET_VALUE</code> will have the value of the <code>SECRET_PASSWORD</code> environment variable on the host. (So, for example, if
+<code>SECRET_PASSWORD</code> is <code>abc123</code> on the host, then <code>SUPER_SECRET_VALUE</code> will have the value <code>abc123</code> in the container.)</li>
+</ul>
+<p>If <code>SECRET_PASSWORD</code> is not set on the host, batect will show an error message and not start the task.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Containers.html" class="navigation navigation-prev " aria-label="Previous page: Containers">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../tools/Java.html" class="navigation navigation-next " aria-label="Next page: Java">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Tasks","level":"2.3","depth":1,"next":{"title":"Java","level":"3.1","depth":1,"path":"tools/Java.md","ref":"tools/Java.md","articles":[{"title":"Gradle","level":"3.1.1","depth":2,"anchor":"#gradle","path":"tools/Java.md","ref":"tools/Java.md#gradle","articles":[]}]},"previous":{"title":"Containers","level":"2.2","depth":1,"path":"config/Containers.md","ref":"config/Containers.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","github","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/charleskorn/batect"},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-63947227-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Charles Korn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"Introduction.md","glossary":"GLOSSARY.md","summary":"Contents.md"},"variables":{},"title":"batect documentation","language":"en","gitbook":"*","description":"Documentation for batect, the build and testing environments as code tool"},"file":{"path":"config/Tasks.md","mtime":"2018-03-25T07:21:58.970Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-25T08:29:33.307Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

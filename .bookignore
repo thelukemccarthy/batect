@@ -1,0 +1,5 @@
+*.gradle
+package.json
+yarn.lock
+yarn-error.log
+gradle/
