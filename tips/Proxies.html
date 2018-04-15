@@ -553,8 +553,8 @@ combination of:</p>
 provided for them</li>
 </ul>
 <p>This last point is the most relevant to proxy settings - as <code>http_proxy</code>, <code>https_proxy</code>, <code>no_proxy</code> etc. are defined as
-pre-defined build arguments, we can pass the host&apos;s proxy settings into the build environment as build arguments.</p>
-<p>batect automatically propagates any proxy settings configured on the host as build arguments unless the <code>--no-proxy-vars</code>
+pre-defined build arguments, we can pass the host&apos;s proxy environment variables into the build environment as build arguments.</p>
+<p>batect automatically propagates any proxy environment variables configured on the host as build arguments unless the <code>--no-proxy-vars</code>
 flag is passed to <code>batect</code>.</p>
 <p>Note that build arguments are not persisted in the image - they exist only as environment variables at build time. Furthermore,
 the pre-defined proxy-related build arguments (unlike normal build arguments) do not impact Docker&apos;s cache invalidation logic -
@@ -567,9 +567,13 @@ proxy should have no impact.)</p>
 <li>any environment variables defined in the image (including any base images) with <code>ENV</code> instructions</li>
 <li>any container-specific environment variables specified in the container or task in <code>batect.yml</code></li>
 </ul>
-<p>batect automatically propagates any proxy settings configured on the host as environment variables unless the <code>--no-proxy-vars</code>
-flag is passed to <code>batect</code>.</p>
-<h2 id="proxy-settings-recognised-by-batect">Proxy settings recognised by batect</h2>
+<p>batect automatically propagates any proxy environment variables configured on the host as environment variables unless the
+<code>--no-proxy-vars</code> flag is passed to <code>batect</code>.</p>
+<p>Starting with v0.14, if propagating proxy environment variables is enabled, and
+<a href="#proxy-environment-variables-recognised-by-batect">any proxy environment variable recognised by batect</a> is set, batect will also add the names
+of all containers started as part of the task to <code>no_proxy</code> and <code>NO_PROXY</code> (or create those environment variables if they&apos;re not set).
+This ensures that inter-container communication is not proxied.</p>
+<h2 id="proxy-environment-variables-recognised-by-batect">Proxy environment variables recognised by batect</h2>
 <p>batect will propagate the following proxy-related environment variables:</p>
 <ul>
 <li><code>http_proxy</code></li>
@@ -626,7 +630,7 @@ defined, but <code>HTTP_PROXY</code> isn&apos;t, then only <code>http_proxy</cod
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Proxies","level":"4.6","depth":1,"next":{"title":"Sample projects","level":"5.1","depth":1,"path":"SampleProjects.md","ref":"SampleProjects.md","articles":[]},"previous":{"title":"Waiting for dependencies to be ready","level":"4.5","depth":1,"path":"tips/WaitingForDependenciesToBeReady.md","ref":"tips/WaitingForDependenciesToBeReady.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","github","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/charleskorn/batect"},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-63947227-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Charles Korn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"Introduction.md","glossary":"GLOSSARY.md","summary":"Contents.md"},"variables":{},"title":"batect documentation","language":"en","gitbook":"*","description":"Documentation for batect, the build and testing environments as code tool"},"file":{"path":"tips/Proxies.md","mtime":"2018-04-15T08:49:57.367Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-15T08:53:25.332Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Proxies","level":"4.6","depth":1,"next":{"title":"Sample projects","level":"5.1","depth":1,"path":"SampleProjects.md","ref":"SampleProjects.md","articles":[]},"previous":{"title":"Waiting for dependencies to be ready","level":"4.5","depth":1,"path":"tips/WaitingForDependenciesToBeReady.md","ref":"tips/WaitingForDependenciesToBeReady.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","github","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/charleskorn/batect"},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-63947227-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Charles Korn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"Introduction.md","glossary":"GLOSSARY.md","summary":"Contents.md"},"variables":{},"title":"batect documentation","language":"en","gitbook":"*","description":"Documentation for batect, the build and testing environments as code tool"},"file":{"path":"tips/Proxies.md","mtime":"2018-04-15T11:25:19.951Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-15T11:28:13.690Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
