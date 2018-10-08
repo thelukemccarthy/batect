@@ -528,12 +528,13 @@
 <p>Overrides any command specified on the container definition and the default image command. If no command is provided here, the command
 specified on the container definition is used if there is one, otherwise the image&apos;s default command is used.</p>
 </li>
-<li><p><code>environment</code> List of environment variables (in <code>name=value</code> format) to pass to the container, in addition to those defined on the
+<li><p><code>environment</code> List of environment variables (in <code>name: value</code> format) to pass to the container, in addition to those defined on the
 container itself.</p>
-<p>If a variable is specified both here and on the container itself, the value given here will override the value defined on the container.
-Just like when <a href="Containers.html#environment">specifying a variable directly on the container</a>, you can pass variables from the host to the
-container in the <code>CONTAINER_VARIABLE=$HOST_VARIABLE</code> format. If the referenced host variable is not present, batect will show an error
-message and not start the task.</p>
+<p>If a variable is specified both here and on the container itself, the value given here will override the value defined on the container.</p>
+<p>This field supports all of the same syntax as when <a href="Containers.html#environment">specifying a variable directly on the container</a>,
+including passing variables from the host to the container and providing defaults for when the host variable is not set.</p>
+<p>Values that are YAML booleans or numbers should be wrapped in double quotes.</p>
+<p>Prior to v0.21, environment variables were required to be supplied in <code>name=value</code> format.</p>
 </li>
 <li><p><code>ports</code> List of port mappings to create for the container, in addition to those defined on the container itself.</p>
 <p>Behaves identically to <a href="Containers.html#ports">specifying a port mapping directly on the container</a>, and supports the same syntax.</p>
@@ -600,16 +601,23 @@ given for the container definition).</p>
 <span class="hljs-attr">    run:</span>
 <span class="hljs-attr">      container:</span> app
 <span class="hljs-attr">      environment:</span>
-<span class="hljs-bullet">        -</span> ENABLE_COOL_NEW_FEATURE=<span class="hljs-literal">true</span>
-<span class="hljs-bullet">        -</span> SUPER_SECRET_VALUE=$SECRET_PASSWORD
+<span class="hljs-attr">        COUNTRY:</span> Australia
+<span class="hljs-attr">        SUPER_SECRET_VALUE:</span> $SECRET_PASSWORD
+<span class="hljs-attr">        ANOTHER_SECRET_VALUE:</span> ${SECRET_PASSWORD}
+<span class="hljs-attr">        OPTIMISATION_LEVEL:</span> ${HOST_OPTIMISATION_LEVEL:-none}
 </code></pre>
 <p>Running the task <code>start-app</code> will start the <code>app</code> container with the following environment variables:</p>
 <ul>
-<li>The environment variable <code>ENABLE_COOL_NEW_FEATURE</code> will have value <code>true</code>.</li>
-<li>The environment variable <code>SUPER_SECRET_VALUE</code> will have the value of the <code>SECRET_PASSWORD</code> environment variable on the host. (So, for example, if
-<code>SECRET_PASSWORD</code> is <code>abc123</code> on the host, then <code>SUPER_SECRET_VALUE</code> will have the value <code>abc123</code> in the container.)</li>
-</ul>
+<li><p>The environment variable <code>COUNTRY</code> will have value <code>Australia</code>.</p>
+</li>
+<li><p>The environment variables <code>SUPER_SECRET_VALUE</code> and <code>ANOTHER_SECRET_VALUE</code> will have the value of the <code>SECRET_PASSWORD</code> environment variable on
+the host. (So, for example, if <code>SECRET_PASSWORD</code> is <code>abc123</code> on the host, then <code>SUPER_SECRET_VALUE</code> will have the value <code>abc123</code> in the container.)</p>
 <p>If <code>SECRET_PASSWORD</code> is not set on the host, batect will show an error message and not start the task.</p>
+</li>
+<li><p>The environment variable <code>OPTIMISATION_LEVEL</code> will have the value of the <code>HOST_OPTIMISATION_LEVEL</code> environment variable on the host.</p>
+<p>If <code>HOST_OPTIMISATION_LEVEL</code> is not set on the host, then <code>OPTIMISATION_LEVEL</code> will have the value <code>none</code> in the container.</p>
+</li>
+</ul>
 <h3 id="task-with-port-mappings">Task with port mappings</h3>
 <pre><code class="lang-yaml"><span class="hljs-attr">tasks:</span>
 <span class="hljs-attr">  start-app:</span>
@@ -674,7 +682,7 @@ not <code>app:123</code>.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Tasks","level":"2.3","depth":1,"next":{"title":"Java","level":"3.1","depth":1,"path":"tools/Java.md","ref":"tools/Java.md","articles":[{"title":"Gradle","level":"3.1.1","depth":2,"anchor":"#gradle","path":"tools/Java.md","ref":"tools/Java.md#gradle","articles":[]}]},"previous":{"title":"Containers","level":"2.2","depth":1,"path":"config/Containers.md","ref":"config/Containers.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","github","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/charleskorn/batect"},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-63947227-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Charles Korn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"Introduction.md","glossary":"GLOSSARY.md","summary":"Contents.md"},"variables":{},"title":"batect documentation","language":"en","gitbook":"*","description":"Documentation for batect, the build and testing environments as code tool"},"file":{"path":"config/Tasks.md","mtime":"2018-10-01T04:45:29.870Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-01T04:50:11.362Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Tasks","level":"2.3","depth":1,"next":{"title":"Java","level":"3.1","depth":1,"path":"tools/Java.md","ref":"tools/Java.md","articles":[{"title":"Gradle","level":"3.1.1","depth":2,"anchor":"#gradle","path":"tools/Java.md","ref":"tools/Java.md#gradle","articles":[]}]},"previous":{"title":"Containers","level":"2.2","depth":1,"path":"config/Containers.md","ref":"config/Containers.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","github","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/charleskorn/batect"},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-63947227-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Charles Korn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"Introduction.md","glossary":"GLOSSARY.md","summary":"Contents.md"},"variables":{},"title":"batect documentation","language":"en","gitbook":"*","description":"Documentation for batect, the build and testing environments as code tool"},"file":{"path":"config/Tasks.md","mtime":"2018-10-08T06:31:53.893Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-08T06:36:45.410Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
