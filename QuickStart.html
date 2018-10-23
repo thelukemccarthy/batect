@@ -13,7 +13,7 @@
         <meta name="description" content="Documentation for batect, the build and testing environments as code tool">
       
       
-        <link rel="canonical" href="https://batect.charleskorn.com/tips/WaitingForDependenciesToBeReady.html">
+        <link rel="canonical" href="https://batect.charleskorn.com/QuickStart.html">
       
       
         <meta name="author" content="Charles Korn">
@@ -37,18 +37,18 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <link rel="shortcut icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.4">
     
     
       
-        <title>Waiting for dependencies to be ready - batect documentation</title>
+        <title>Quick start - batect documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      <link rel="stylesheet" href="assets/stylesheets/application.451f80e5.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="assets/stylesheets/application-palette.22915126.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
       
@@ -66,7 +66,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="assets/fonts/material-icons.css">
     
     
   </head>
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#waiting-for-dependencies-to-be-ready" tabindex="1" class="md-skip">
+      <a href="#quick-start" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -130,7 +130,7 @@
                 batect documentation
               </span>
               <span class="md-header-nav__topic">
-                Waiting for dependencies to be ready
+                Quick start
               </span>
             
           
@@ -247,7 +247,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../index.html" title="Introduction" class="md-nav__link">
+    <a href="index.html" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -257,11 +257,20 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../QuickStart.html" title="Quick start" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="QuickStart.html" title="Quick start" class="md-nav__link md-nav__link--active">
       Quick start
     </a>
+    
   </li>
 
     
@@ -271,7 +280,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../GettingStarted.html" title="Getting started tutorial" class="md-nav__link">
+    <a href="GettingStarted.html" title="Getting started tutorial" class="md-nav__link">
       Getting started tutorial
     </a>
   </li>
@@ -283,7 +292,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Comparison.html" title="Comparison with other tools" class="md-nav__link">
+    <a href="Comparison.html" title="Comparison with other tools" class="md-nav__link">
       Comparison with other tools
     </a>
   </li>
@@ -314,7 +323,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../config/Overview.html" title="Overview" class="md-nav__link">
+    <a href="config/Overview.html" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -326,7 +335,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../config/Containers.html" title="Containers" class="md-nav__link">
+    <a href="config/Containers.html" title="Containers" class="md-nav__link">
       Containers
     </a>
   </li>
@@ -338,7 +347,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../config/Tasks.html" title="Tasks" class="md-nav__link">
+    <a href="config/Tasks.html" title="Tasks" class="md-nav__link">
       Tasks
     </a>
   </li>
@@ -374,7 +383,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/Java.html" title="Java" class="md-nav__link">
+    <a href="tools/Java.html" title="Java" class="md-nav__link">
       Java
     </a>
   </li>
@@ -386,7 +395,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/Ruby.html" title="Ruby" class="md-nav__link">
+    <a href="tools/Ruby.html" title="Ruby" class="md-nav__link">
       Ruby
     </a>
   </li>
@@ -398,7 +407,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/Docker.html" title="Docker" class="md-nav__link">
+    <a href="tools/Docker.html" title="Docker" class="md-nav__link">
       Docker
     </a>
   </li>
@@ -413,12 +422,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
     
     <label class="md-nav__link" for="nav-7">
       Tips and tricks
@@ -436,7 +443,7 @@
 
 
   <li class="md-nav__item">
-    <a href="CISetup.html" title="CI setup" class="md-nav__link">
+    <a href="tips/CISetup.html" title="CI setup" class="md-nav__link">
       CI setup
     </a>
   </li>
@@ -448,7 +455,7 @@
 
 
   <li class="md-nav__item">
-    <a href="IDEIntegration.html" title="IDE integration" class="md-nav__link">
+    <a href="tips/IDEIntegration.html" title="IDE integration" class="md-nav__link">
       IDE integration
     </a>
   </li>
@@ -460,7 +467,7 @@
 
 
   <li class="md-nav__item">
-    <a href="Performance.html" title="Performance" class="md-nav__link">
+    <a href="tips/Performance.html" title="Performance" class="md-nav__link">
       Performance
     </a>
   </li>
@@ -472,7 +479,7 @@
 
 
   <li class="md-nav__item">
-    <a href="BuildArtifactsOwnedByRoot.html" title="Build artifacts are owned by root" class="md-nav__link">
+    <a href="tips/BuildArtifactsOwnedByRoot.html" title="Build artifacts are owned by root" class="md-nav__link">
       Build artifacts are owned by root
     </a>
   </li>
@@ -482,20 +489,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="WaitingForDependenciesToBeReady.html" title="Waiting for dependencies to be ready" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="tips/WaitingForDependenciesToBeReady.html" title="Waiting for dependencies to be ready" class="md-nav__link">
       Waiting for dependencies to be ready
     </a>
-    
   </li>
 
         
@@ -505,7 +503,7 @@
 
 
   <li class="md-nav__item">
-    <a href="Proxies.html" title="Proxies" class="md-nav__link">
+    <a href="tips/Proxies.html" title="Proxies" class="md-nav__link">
       Proxies
     </a>
   </li>
@@ -522,7 +520,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../SampleProjects.html" title="Sample projects" class="md-nav__link">
+    <a href="SampleProjects.html" title="Sample projects" class="md-nav__link">
       Sample projects
     </a>
   </li>
@@ -579,27 +577,27 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/charleskorn/batect/edit/master/docs/content/tips/WaitingForDependenciesToBeReady.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/charleskorn/batect/edit/master/docs/content/QuickStart.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="waiting-for-dependencies-to-be-ready">Waiting for dependencies to be ready<a class="headerlink" href="#waiting-for-dependencies-to-be-ready" title="Permanent link">&para;</a></h1>
-<div class="admonition tip">
-<p class="admonition-title">tl;dr</p>
-<p>Make sure your image has a health check defined, and batect will take care of the rest</p>
-</div>
-<p>When running integration or end-to-end tests, you might need to start a number of external dependencies for your application, such as databases or
-fakes for external services.</p>
-<p>However, having these dependencies just running usually isn't sufficient - they also need to be ready to respond to requests. For example, your database of choice
-might take a few seconds to initialise and start accepting queries, and during this time, any requests to it will fail. So we'd like to avoid starting our tests
-before we know these things are ready, otherwise they'll fail unnecessarily.</p>
-<p>batect supports this exact requirement by taking advantage of <a href="https://docs.docker.com/engine/reference/builder/#healthcheck">Docker's health check feature</a>:</p>
-<ul>
-<li>If a container's image has a health check defined, batect won't start any containers that depend on it until the health check reports that it is healthy.</li>
-<li>If a container's image does not have a health check defined, it is treated as though it has a health check that immediately reported that it is healthy.</li>
-<li>If the health check fails to report that the container is healthy before the timeout period expires, batect won't start any other containers and will abort the task.</li>
-</ul>
-<p>There's <a href="https://github.com/docker-library/healthcheck/">a collection of sample health check scripts provided by Docker</a> you can use as inspiration, and the
-<a href="../SampleProjects.html">sample projects</a> use this technique extensively.</p>
+                <h1 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h1>
+<p>The <code>batect</code> script is designed to be committed alongside your project, and not installed globally. It will
+automatically pull down the correct version of batect for your operating system.</p>
+<ol>
+<li>
+<p>Download the latest version of <code>batect</code> from the <a href="https://github.com/charleskorn/batect/releases">releases page</a>,
+   and copy it into your project.</p>
+<p>Note that you only need the file named <code>batect</code> - you don't need to download <code>batect.jar</code>.</p>
+</li>
+<li>
+<p>Make sure it's executable (run <code>chmod +x batect</code>).</p>
+</li>
+<li>Run <code>./batect --version</code> and if you see some version information, you're good to go!</li>
+</ol>
+<p>Note that a JVM (version 8 or above) must be installed to use batect. (This requirement will be removed in a future release.)</p>
+<p>batect is compatible with Docker 17.06 and higher.</p>
+<p>Now you're ready to configure batect for your project - check out the <a href="GettingStarted.html">getting started tutorial</a>, dive into the
+<a href="config/Overview.html">configuration file reference</a>, or take a look at one of the <a href="SampleProjects.html">sample projects</a>.</p>
                 
                   
                 
@@ -620,7 +618,7 @@ before we know these things are ready, otherwise they'll fail unnecessarily.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="BuildArtifactsOwnedByRoot.html" title="Build artifacts are owned by root" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="index.html" title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -629,19 +627,19 @@ before we know these things are ready, otherwise they'll fail unnecessarily.</p>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Build artifacts are owned by root
+                Introduction
               </span>
             </div>
           </a>
         
         
-          <a href="Proxies.html" title="Proxies" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="GettingStarted.html" title="Getting started tutorial" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Proxies
+                Getting started tutorial
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -669,7 +667,7 @@ before we know these things are ready, otherwise they'll fail unnecessarily.</p>
       
         
   <div class="md-footer-social">
-    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    <link rel="stylesheet" href="./assets/fonts/font-awesome.css">
     
       <a href="https://github.com/charleskorn/batect" class="md-footer-social__link fa fa-github"></a>
     
@@ -682,9 +680,9 @@ before we know these things are ready, otherwise they'll fail unnecessarily.</p>
       
     </div>
     
-      <script src="../assets/javascripts/application.583bbe55.js"></script>
+      <script src="assets/javascripts/application.583bbe55.js"></script>
       
-      <script>app.initialize({version:"1.0.3",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.0.3",url:{base:"."}})</script>
       
     
     

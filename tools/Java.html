@@ -1,635 +1,799 @@
 
-<!DOCTYPE HTML>
-<html lang="en" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Java · batect documentation</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Documentation for batect, the build and testing environments as code tool">
+      
+      
+        <link rel="canonical" href="https://batect.charleskorn.com/tools/Java.html">
+      
+      
         <meta name="author" content="Charles Korn">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Java - batect documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
         
         
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
-
-    
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-        
-
-    
-
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-        
+        <meta name="theme-color" content="#2196f3">
+      
     
     
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-
-    
-    <link rel="next" href="Java.html" />
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
-    <link rel="prev" href="../config/Tasks.html" />
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
     
-
-    </head>
-    <body>
-        
-<div class="book">
-    <div class="book-summary">
-        
-            
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
-</div>
-
-            
-                <nav role="navigation">
-                
-
-
-<ul class="summary">
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
-
+  </head>
+  
     
-
     
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
         
         
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                    Introduction
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" data-path="../Comparison.html">
-            
-                <a href="../Comparison.html">
-            
-                    
-                    Comparison with other tools
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" data-path="../Installation.html">
-            
-                <a href="../Installation.html">
-            
-                    
-                    Installation
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" data-path="../GettingStarted.html">
-            
-                <a href="../GettingStarted.html">
-            
-                    
-                    Getting started tutorial
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
         
-        <li class="header">Configuration file reference</li>
-        
-        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-        <li class="chapter " data-level="2.1" data-path="../config/Overview.html">
-            
-                <a href="../config/Overview.html">
-            
-                    
-                    Overview
-            
-                </a>
-            
-
-            
-        </li>
+      <a href="../#java" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
     
-        <li class="chapter " data-level="2.2" data-path="../config/Containers.html">
-            
-                <a href="../config/Containers.html">
-            
-                    
-                    Containers
-            
-                </a>
-            
-
-            
-        </li>
     
-        <li class="chapter " data-level="2.3" data-path="../config/Tasks.html">
-            
-                <a href="../config/Tasks.html">
-            
-                    
-                    Tasks
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-        
-        <li class="header">Language and tool-specific information</li>
-        
-        
-    
-        <li class="chapter active" data-level="3.1" data-path="Java.html">
-            
-                <a href="Java.html">
-            
-                    
-                    Java
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.1.1" data-path="Java.html">
-            
-                <a href="Java.html#gradle">
-            
-                    
-                    Gradle
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="3.2" data-path="Ruby.html">
-            
-                <a href="Ruby.html">
-            
-                    
-                    Ruby
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.2.1" data-path="Ruby.html">
-            
-                <a href="Ruby.html#bundler">
-            
-                    
-                    Bundler
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="3.3" data-path="Docker.html">
-            
-                <a href="Docker.html">
-            
-                    
-                    Docker
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.3.1" data-path="Docker.html">
-            
-                <a href="Docker.html#building-and-pushing-an-image">
-            
-                    
-                    Building and pushing an image
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="header">Tips and tricks</li>
-        
-        
-    
-        <li class="chapter " data-level="4.1" data-path="../tips/CISetup.html">
-            
-                <a href="../tips/CISetup.html">
-            
-                    
-                    CI setup
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.2" data-path="../tips/IDEIntegration.html">
-            
-                <a href="../tips/IDEIntegration.html">
-            
-                    
-                    IDE integration
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.3" data-path="../tips/Performance.html">
-            
-                <a href="../tips/Performance.html">
-            
-                    
-                    Performance
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="4.3.1" data-path="../tips/Performance.html">
-            
-                <a href="../tips/Performance.html#io-performance">
-            
-                    
-                    I/O performance
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.3.2" data-path="../tips/Performance.html">
-            
-                <a href="../tips/Performance.html#database-schema-and-test-data">
-            
-                    
-                    Database schema and test data
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.3.3" data-path="../tips/Performance.html">
-            
-                <a href="../tips/Performance.html#shutdown-time">
-            
-                    
-                    Shutdown time
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="4.4" data-path="../tips/BuildArtifactsOwnedByRoot.html">
-            
-                <a href="../tips/BuildArtifactsOwnedByRoot.html">
-            
-                    
-                    Build artifacts are owned by root
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.5" data-path="../tips/WaitingForDependenciesToBeReady.html">
-            
-                <a href="../tips/WaitingForDependenciesToBeReady.html">
-            
-                    
-                    Waiting for dependencies to be ready
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.6" data-path="../tips/Proxies.html">
-            
-                <a href="../tips/Proxies.html">
-            
-                    
-                    Proxies
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="5.1" data-path="../SampleProjects.html">
-            
-                <a href="../SampleProjects.html">
-            
-                    
-                    Sample projects
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.2" >
-            
-                <a target="_blank" href="https://github.com/charleskorn/batect/releases">
-            
-                    
-                    Release notes
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3" >
-            
-                <a target="_blank" href="https://github.com/charleskorn/batect/blob/master/ROADMAP.md">
-            
-                    
-                    Roadmap
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://batect.charleskorn.com" title="batect documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
         </a>
-    </li>
-</ul>
-
-
-                </nav>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
             
+              <span class="md-header-nav__topic">
+                batect documentation
+              </span>
+              <span class="md-header-nav__topic">
+                Java
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
         
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
     </div>
-
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
-
-<div class="book-header" role="navigation">
-    
-
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Java</a>
-    </h1>
+  </div>
 </div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
 
 
+  
 
 
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
+  <a href="https://github.com/charleskorn/batect/" title="Go to repository" class="md-source" data-md-source="github">
     
-                                <section class="normal markdown-section">
-                                
-                                <h1 id="java">Java</h1>
-<h2 id="gradle">Gradle</h2>
-<p>You can see an example of configuring and using Java and Gradle with batect in the <a href="https://github.com/charleskorn/batect-sample-java" target="_blank">Java sample project</a>.</p>
-<h3 id="caching-dependencies">Caching dependencies</h3>
-<p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p><strong>tl;dr</strong>: mount a local directory as the <code>~/.gradle</code> directory within the container, otherwise you&apos;ll have to download your dependencies every time the build
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      charleskorn/batect
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://batect.charleskorn.com" title="batect documentation" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    batect documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/charleskorn/batect/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      charleskorn/batect
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../index.html" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../QuickStart.html" title="Quick start" class="md-nav__link">
+      Quick start
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../GettingStarted.html" title="Getting started tutorial" class="md-nav__link">
+      Getting started tutorial
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Comparison.html" title="Comparison with other tools" class="md-nav__link">
+      Comparison with other tools
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Configuration file reference
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Configuration file reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../config/Overview.html" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../config/Containers.html" title="Containers" class="md-nav__link">
+      Containers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../config/Tasks.html" title="Tasks" class="md-nav__link">
+      Tasks
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Language and tool-specific information
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Language and tool-specific information
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Java
+      </label>
+    
+    <a href="Java.html" title="Java" class="md-nav__link md-nav__link--active">
+      Java
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gradle" title="Gradle" class="md-nav__link">
+    Gradle
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caching-dependencies" title="Caching dependencies" class="md-nav__link">
+    Caching dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-the-gradle-daemon" title="Disabling the Gradle daemon" class="md-nav__link">
+    Disabling the Gradle daemon
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="Ruby.html" title="Ruby" class="md-nav__link">
+      Ruby
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="Docker.html" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Tips and tricks
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Tips and tricks
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tips/CISetup.html" title="CI setup" class="md-nav__link">
+      CI setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tips/IDEIntegration.html" title="IDE integration" class="md-nav__link">
+      IDE integration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tips/Performance.html" title="Performance" class="md-nav__link">
+      Performance
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tips/BuildArtifactsOwnedByRoot.html" title="Build artifacts are owned by root" class="md-nav__link">
+      Build artifacts are owned by root
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tips/WaitingForDependenciesToBeReady.html" title="Waiting for dependencies to be ready" class="md-nav__link">
+      Waiting for dependencies to be ready
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tips/Proxies.html" title="Proxies" class="md-nav__link">
+      Proxies
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../SampleProjects.html" title="Sample projects" class="md-nav__link">
+      Sample projects
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/charleskorn/batect/releases" title="Release notes" class="md-nav__link">
+      Release notes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/charleskorn/batect/blob/master/ROADMAP.md" title="Roadmap" class="md-nav__link">
+      Roadmap
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gradle" title="Gradle" class="md-nav__link">
+    Gradle
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caching-dependencies" title="Caching dependencies" class="md-nav__link">
+    Caching dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-the-gradle-daemon" title="Disabling the Gradle daemon" class="md-nav__link">
+    Disabling the Gradle daemon
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/charleskorn/batect/edit/master/docs/content/tools/Java.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="java">Java<a class="headerlink" href="#java" title="Permanent link">&para;</a></h1>
+<h2 id="gradle">Gradle<a class="headerlink" href="#gradle" title="Permanent link">&para;</a></h2>
+<p>You can see an example of configuring and using Java and Gradle with batect in the <a href="https://github.com/charleskorn/batect-sample-java">Java sample project</a>.</p>
+<h3 id="caching-dependencies">Caching dependencies<a class="headerlink" href="#caching-dependencies" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">tl;dr</p>
+<p>Mount a local directory as the <code>~/.gradle</code> directory within the container, otherwise you'll have to download your dependencies every time the build
 runs</p>
-</div></div></p>
-<p>By default, Gradle downloads all of your application&apos;s dependencies to the <code>~/.gradle</code> directory. However, because batect destroys all of your containers once
+</div>
+<p>By default, Gradle downloads all of your application's dependencies to the <code>~/.gradle</code> directory. However, because batect destroys all of your containers once
 the task finishes, this directory is lost at the end of every task run - which means that Gradle will have to download all of your dependencies again,
 significantly slowing down the build.</p>
 <p>The solution to this is to mount a local directory (eg. <code>.gradle-cache</code>) into the container at <code>~/.gradle</code>, so that these downloaded dependencies are
 persisted between builds.</p>
-<p>Note that you can&apos;t use <code>~</code> in the container path for a volume mount:</p>
+<p>Note that you can't use <code>~</code> in the container path for a volume mount:</p>
 <ul>
-<li>If you&apos;re using <a href="../tips/BuildArtifactsOwnedByRoot.html">run as current user mode</a>, use the home directory you specified for <a href="../config/Containers.html#runascurrentuser"><code>home_directory</code></a>.</li>
-<li>If you&apos;re not using <a href="../tips/BuildArtifactsOwnedByRoot.html">run as current user mode</a>, use <code>/root</code> as the home directory, as the vast majority of containers
-default to the root user and use this as the root user&apos;s home directory.</li>
+<li>If you're using <a href="../tips/BuildArtifactsOwnedByRoot.html">run as current user mode</a>, use the home directory you specified for <a href="../config/Containers.html#run_as_current_user"><code>home_directory</code></a>.</li>
+<li>If you're not using <a href="../tips/BuildArtifactsOwnedByRoot.html">run as current user mode</a>, use <code>/root</code> as the home directory, as the vast majority of containers
+  default to the root user and use this as the root user's home directory.</li>
 </ul>
-<p><div class="alert alert-danger hints-alert"><div class="hints-icon"><i class="fa fa-exclamation-circle"></i></div><div class="hints-container"><p>With this configuration, you will not be able to run more than one task at a time. This is due to <a href="https://github.com/gradle/gradle/issues/851" target="_blank">a well-known issue with Gradle</a>.</p>
-</div></div></p>
-<h3 id="disabling-the-gradle-daemon">Disabling the Gradle daemon</h3>
-<p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p><strong>tl;dr</strong>: set the environment variable <code>GRADLE_OPTS</code> to <code>-Dorg.gradle.daemon=false</code></p>
-</div></div></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>With this configuration, you will not be able to run more than one task at a time. This is due to <a href="https://github.com/gradle/gradle/issues/851">a well-known issue with Gradle</a>.</p>
+</div>
+<h3 id="disabling-the-gradle-daemon">Disabling the Gradle daemon<a class="headerlink" href="#disabling-the-gradle-daemon" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">tl;dr</p>
+<p>Set the environment variable <code>GRADLE_OPTS</code> to <code>-Dorg.gradle.daemon=false</code></p>
+</div>
 <p>When Gradle starts, it has to load itself and then compile and load your build script so that it can execute it. This can take a noticeable amount of time for
 larger projects, so, by default, it starts a daemon that remains running and ready to start your build without having to load or compile anything.</p>
 <p>However, when Gradle is running inside an ephemeral container like the ones created by batect, this daemon is pointless - it will be terminated alongside the
-rest of the container at the end of the build. In fact, the cost of starting the daemon means that this is actually counter-productive, because we&apos;ll pay the
-performance penalty of starting the daemon every time when we won&apos;t then benefit from it in later builds.</p>
-<p>Therefore, it&apos;s best to disable the daemon when running Gradle inside a container. This can be done by setting the <code>GRADLE_OPTS</code> environment variable to
+rest of the container at the end of the build. In fact, the cost of starting the daemon means that this is actually counter-productive, because we'll pay the
+performance penalty of starting the daemon every time when we won't then benefit from it in later builds.</p>
+<p>Therefore, it's best to disable the daemon when running Gradle inside a container. This can be done by setting the <code>GRADLE_OPTS</code> environment variable to
 <code>-Dorg.gradle.daemon=false</code>.</p>
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
-</div>
-
-                        </div>
-                    </div>
                 
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../config/Tasks.html" title="Tasks" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
-
-            
-                
-                <a href="../config/Tasks.html" class="navigation navigation-prev " aria-label="Previous page: Tasks">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="Java.html#gradle" class="navigation navigation-next " aria-label="Next page: Gradle">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Tasks
+              </span>
+            </div>
+          </a>
         
+        
+          <a href="Ruby.html" title="Ruby" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Ruby
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
     </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2017-2018 Charles Korn.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/charleskorn/batect" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
 
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java","level":"3.1","depth":1,"next":{"title":"Gradle","level":"3.1.1","depth":2,"anchor":"#gradle","path":"tools/Java.md","ref":"tools/Java.md#gradle","articles":[]},"previous":{"title":"Tasks","level":"2.3","depth":1,"path":"config/Tasks.md","ref":"config/Tasks.md","articles":[]},"dir":"ltr"},"config":{"plugins":["ga","github","hints"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/charleskorn/batect"},"search":{},"hints":{"danger":"fa fa-exclamation-circle","info":"fa fa-info-circle","tip":"fa fa-mortar-board","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"ga":{"configuration":"auto","token":"UA-63947227-2"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Charles Korn","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"Introduction.md","glossary":"GLOSSARY.md","summary":"Contents.md"},"variables":{},"title":"batect documentation","language":"en","gitbook":"*","description":"Documentation for batect, the build and testing environments as code tool"},"file":{"path":"tools/Java.md","mtime":"2018-10-17T04:23:54.872Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-17T04:28:23.726Z"},"basePath":"..","book":{"language":""}});
-        });
-    </script>
-</div>
-
-        
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
     
-        
-        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
+      <script src="../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.3",url:{base:".."}})</script>
+      
     
-        
-        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
-        
     
-        
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
+      
+        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-63947227-2","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      
     
-        
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
-
-    </body>
+  </body>
 </html>
-
