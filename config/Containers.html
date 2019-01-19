@@ -975,6 +975,25 @@ everywhere. For example, use <code>alpine:3.7</code>, not <code>alpine</code> or
 <p>Command to run when the container starts.</p>
 <p>If not provided, the default command for the image will be run.</p>
 <p>Both of these can be overridden for an individual task by specifying a <a href="Tasks.html#run"><code>command</code> at the task level</a>.</p>
+<p><a name="command-entrypoint-note"></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Keep in mind that this command is passed to the image's <code>ENTRYPOINT</code>, just like it would when using <code>docker run &lt;image&gt; &lt;command&gt;</code>
+directly.</p>
+<p>This means that if the entrypoint is not set or is not a shell, standard shell syntax features like <code>&amp;&amp;</code> might not work.</p>
+<p>See the Docker docs for <a href="https://docs.docker.com/engine/reference/builder/#cmd"><code>CMD</code></a> and
+<a href="https://docs.docker.com/engine/reference/builder/#entrypoint"><code>ENTRYPOINT</code></a> for more details.</p>
+<p>If you would like to use shell syntax features in your command, you have two options:</p>
+<ol>
+<li>Set the entrypoint in the image to a shell. For example:
+   <div class="codehilite"><pre><span></span><span class="k">ENTRYPOINT</span><span class="s"> [&quot;/bin/sh&quot;, &quot;-c&quot;]</span>
+</pre></div></li>
+<li>
+<p>Wrap your command in a shell invocation.</p>
+<p>For example, if your command is <code>echo hello &amp;&amp; echo world</code>, set <code>command</code> to <code>sh -c 'echo hello &amp;&amp; echo world'</code>.</p>
+</li>
+</ol>
+</div>
 <h2 id="environment"><code>environment</code><a class="headerlink" href="#environment" title="Permanent link">&para;</a></h2>
 <p>List of environment variables (in <code>name: value</code> format) for the container.</p>
 <p>Values that are YAML booleans or numbers should be wrapped in double quotes.</p>
@@ -1003,7 +1022,8 @@ runs between hosts, which is something you generally want to avoid.</p>
 <p>The curly brace syntax for environment variables, including the ability to specify default values for environment variables,
 was added in v0.21.</p>
 <h3 id="term"><code>TERM</code><a class="headerlink" href="#term" title="Permanent link">&para;</a></h3>
-<p>The <code>TERM</code> environment variable, if set on the host, is always automatically passed through to the container.</p>
+<p>The <code>TERM</code> environment variable, if set on the host, is always automatically passed through to the container. This ensures that features such as
+coloured output continue to work correctly inside the container.</p>
 <h3 id="proxy-related-environment-variables">Proxy-related environment variables<a class="headerlink" href="#proxy-related-environment-variables" title="Permanent link">&para;</a></h3>
 <p>Proxy-related environment variables, if set on the host, are passed through to the container at build and run time, but are not used for image pulls.</p>
 <p>If a proxy-related environment variable is defined on the container's configuration, it takes precedence over the host-provided value.</p>

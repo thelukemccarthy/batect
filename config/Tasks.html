@@ -777,8 +777,11 @@
 </li>
 <li>
 <p><code>command</code> Command to run for this task.</p>
-<p>Overrides any command specified on the container definition and the default image command. If no command is provided here, the command
-specified on the container definition is used if there is one, otherwise the image's default command is used.</p>
+<p>Overrides any command specified on the container definition and the image's default command. If no command is provided here,
+<a href="Containers.html#command">the command specified on the container definition</a> is used if there is one, otherwise the image's default command is used.</p>
+<p>Just like when specifying a command for a container, this command is passed to the image's <code>ENTRYPOINT</code>, if there is one. This can prevent
+shell syntax features like <code>&amp;&amp;</code> from working. See the <a href="Containers.html#command-entrypoint-note">note about entrypoints in the documentation for containers</a>
+for more information.</p>
 </li>
 <li>
 <p><code>environment</code> List of environment variables (in <code>name: value</code> format) to pass to the container, in addition to those defined on the
