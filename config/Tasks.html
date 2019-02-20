@@ -797,6 +797,13 @@ including passing variables from the host to the container and providing default
 <p>Behaves identically to <a href="Containers.html#ports">specifying a port mapping directly on the container</a>, and supports the same syntax.</p>
 <p>Available since v0.13.</p>
 </li>
+<li>
+<p><code>working_directory</code> Working directory to use for this task's container.</p>
+<p>Overrides any working directory on the container definition and the image's default working directory. If no working directory is provided here,
+<a href="Containers.html#working_directory">the working directory specified on the container definition</a> is used if there is one, otherwise the image's default
+working directory is used.</p>
+<p>Available since v0.26.</p>
+</li>
 </ul>
 <h2 id="dependencies"><code>dependencies</code><a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
 <p>List of other containers that should be started and healthy before starting the task container given in <code>run</code>.</p>
@@ -958,7 +965,7 @@ not <code>app:123</code>.</p>
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2017-2018 Charles Korn.
+            Copyright &copy; 2017-2019 Charles Korn.
           </div>
         
         powered by

@@ -1031,6 +1031,7 @@ coloured output continue to work correctly inside the container.</p>
 <h2 id="working_directory"><code>working_directory</code><a class="headerlink" href="#working_directory" title="Permanent link">&para;</a></h2>
 <p>Working directory to start the container in.</p>
 <p>If not provided, the default working directory for the image will be used.</p>
+<p>Both of these can be overridden for an individual task by specifying a <a href="Tasks.html#run"><code>working_directory</code> at the task level</a>.</p>
 <h2 id="volumes"><code>volumes</code><a class="headerlink" href="#volumes" title="Permanent link">&para;</a></h2>
 <p>List of volume mounts to create for the container.</p>
 <p>Relative local paths will be resolved relative to the configuration file's directory.</p>
@@ -1293,7 +1294,7 @@ enabled.</p>
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2017-2018 Charles Korn.
+            Copyright &copy; 2017-2019 Charles Korn.
           </div>
         
         powered by

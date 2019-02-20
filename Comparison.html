@@ -330,6 +330,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ci-tools-with-a-local-runner" title="...CI tools with a local runner?" class="md-nav__link">
+    ...CI tools with a local runner?
+  </a>
+  
+</li>
+      
       
       
       
@@ -634,6 +641,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ci-tools-with-a-local-runner" title="...CI tools with a local runner?" class="md-nav__link">
+    ...CI tools with a local runner?
+  </a>
+  
+</li>
+      
       
       
       
@@ -654,6 +668,12 @@
                 
                 
                 <h1 id="comparison-with-other-tools">Comparison with other tools<a class="headerlink" href="#comparison-with-other-tools" title="Permanent link">&para;</a></h1>
+<div class="admonition question">
+<p class="admonition-title">Feedback wanted</p>
+<p>Are you wondering about how batect compares to other tools? Do you have your own reasons for or against batect compared
+to one of the tools mentioned below?</p>
+<p>Please <a href="https://github.com/charleskorn/batect/issues">file an issue</a> with your questions, comments and feedback.</p>
+</div>
 <p>How does batect compare to...</p>
 <h2 id="vagrant">...Vagrant?<a class="headerlink" href="#vagrant" title="Permanent link">&para;</a></h2>
 <p>Vagrant's use of virtual machines means that it is very heavyweight, making it difficult to run multiple projects'
@@ -662,7 +682,9 @@ environments at once. This is especially problematic on CI servers where we'd li
 with the desired configuration, and nothing automatically re-provisions the machine when the configuration is changed - a
 developer has to remember to re-run the provisioning step if the configuration changes.</p>
 <h2 id="using-shell-scripts-to-drive-docker">...using shell scripts to drive Docker?<a class="headerlink" href="#using-shell-scripts-to-drive-docker" title="Permanent link">&para;</a></h2>
-<p>While it's certainly possible, it quickly gets unwieldy and is difficult to effectively parallelise tasks that can run in parallel.</p>
+<p>While it's certainly possible, it quickly gets unwieldy and is difficult to effectively parallelise tasks that can run in parallel.
+It is also difficult to ensure that all resources created during the task, such as containers and networks, are always correctly
+cleaned up once the task completes, especially if the task fails.</p>
 <h2 id="docker-compose">...Docker Compose?<a class="headerlink" href="#docker-compose" title="Permanent link">&para;</a></h2>
 <p>In the past, I've used Docker Compose to implement the same idea that is at the core of batect. However, using Docker Compose
 for this purpose has a number of drawbacks.</p>
@@ -673,6 +695,67 @@ tool and necessitating the use of a higher-level script to automate its usage.</
 testing), does each operation serially (instead of parallelising operations where possible) and has
 <a href="https://github.com/docker/compose/issues/4369">one long-standing bug</a> that makes waiting for containers to report as healthy
 difficult.</p>
+<h2 id="ci-tools-with-a-local-runner">...CI tools with a local runner?<a class="headerlink" href="#ci-tools-with-a-local-runner" title="Permanent link">&para;</a></h2>
+<p>As an example, both GitLab CI and CircleCI have CLIs that allow you to run your build on your local machine, using the same
+containers (and therefore environment) as they do when running your build on the CI server.</p>
+<p>These tools have been designed to primarily be great CI servers, with the local CLI intended to be a convenience to allow
+developers to test changes to the build configuration, rather than being a day-to-day development tool. batect, on the other hand,
+was designed from the beginning to be a great day-to-day development tool that also works equally well on CI.</p>
+<p>Specific drawbacks of these tools compared to using batect include:</p>
+<ul>
+<li>
+<p>batect provides a significantly better developer experience, with a simpler, easier to use CLI, clearer and more concise output (with more details
+  available when required), and clearer error messages.</p>
+<p>One specific example would be the experience when a dependency container fails to become
+healthy - batect will not only tell you which container did not become healthy, but also automatically display the output from the last
+health check, and also provides the option to not clean up the dependency containers if they fail to allow you to investigate further.</p>
+</li>
+<li>
+<p>batect supports using local Dockerfiles to define the images used, rather than requiring that all images be pushed to a Docker registry.
+  This provides a number of benefits:</p>
+<ul>
+<li>
+<p>Additional configuration or installation of software over and above what is included in the base image can be codified in the Dockerfile,
+  built once per machine that uses it and then cached, saving time over doing this additional configuration or installation at the beginning
+  of each and every build.</p>
+</li>
+<li>
+<p>This also reduces the need to bloat the base image with configuration or software required by only one or two users of the base image,
+  reducing their size and improving maintainability.</p>
+</li>
+<li>
+<p>Enabling changes to be made to the build and testing environments in the same repository as the application's code enhances traceability
+  and understanding of why changes were made - the code change can form part of the same commit as the environmental change required to
+  support it.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>These tools have only basic support for dependencies in other containers (for example, a database used for integration testing),
+  and require the configuration of other tools such as <a href="https://github.com/jwilder/dockerize">Dockerize</a> to ensure that dependencies are ready
+  for use before they are used. This does not take advantage of images' built-in health checks and the benefits this mechanism has, such as
+  a warm-up period.</p>
+<p>Furthermore, this leaves the developer to manually manage transitive dependencies between these containers, and all of the limitations with
+regard to the images used for the build environment discussed above apply equally to dependency images.</p>
+</li>
+<li>
+<p>These tools don't provide time-saving functionality such as
+  <a href="tips/Proxies.html">automatically configuring proxies at image build time and in the container</a>.</p>
+</li>
+<li>
+<p>As these tools are designed to run the build and only the build in exactly the same way every time, they do not support passing additional
+  arguments to the task, making it difficult to change options for tasks that may be helpful during development, such as enabling a debugger
+  or more verbose logging.</p>
+</li>
+<li>
+<p>These tools don't support easily mounting the local working copy into the build container, which means they can't be used for tasks that
+  rely on detecting changes to code, such as a continuous unit test task.</p>
+</li>
+<li>
+<p>These tools don't have a way to easily codify and share tasks not used in the build but used by developers, such as a task
+  that spins up the app with stubbed dependencies.</p>
+</li>
+</ul>
                 
                   
                 
@@ -730,7 +813,7 @@ difficult.</p>
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2017-2018 Charles Korn.
+            Copyright &copy; 2017-2019 Charles Korn.
           </div>
         
         powered by
