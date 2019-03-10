@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.4">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.982221ab.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../assets/javascripts/modernizr.1f0bcf2b.js"></script>
     
     
       
@@ -67,6 +67,35 @@
       
     
     <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-63947227-2", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -104,7 +133,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../#container-definitions" tabindex="1" class="md-skip">
+      <a href="#container-definitions" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -125,22 +154,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                batect documentation
-              </span>
-              <span class="md-header-nav__topic">
-                Containers
-              </span>
-            
+            <span class="md-header-nav__topic">
+              batect documentation
+            </span>
+            <span class="md-header-nav__topic">
+              Containers
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -163,7 +189,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -174,20 +199,18 @@
 
   
 
-
-  <a href="https://github.com/charleskorn/batect/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      charleskorn/batect
+<a href="https://github.com/charleskorn/batect/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    charleskorn/batect
+  </div>
+</a>
           </div>
         </div>
       
@@ -223,20 +246,18 @@
 
   
 
-
-  <a href="https://github.com/charleskorn/batect/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      charleskorn/batect
+<a href="https://github.com/charleskorn/batect/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    charleskorn/batect
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -986,7 +1007,7 @@ directly.</p>
 <p>If you would like to use shell syntax features in your command, you have two options:</p>
 <ol>
 <li>Set the entrypoint in the image to a shell. For example:
-   <div class="codehilite"><pre><span></span><span class="k">ENTRYPOINT</span><span class="s"> [&quot;/bin/sh&quot;, &quot;-c&quot;]</span>
+   <div class="codehilite"><pre><span></span><span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&quot;/bin/sh&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">]</span>
 </pre></div></li>
 <li>
 <p>Wrap your command in a shell invocation.</p>
@@ -1042,14 +1063,14 @@ coloured output continue to work correctly inside the container.</p>
 </li>
 <li>
 <p>An expanded format:
-  <div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">containers</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">my-container</span><span class="p p-Indicator">:</span>
+  <div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">my-container</span><span class="p">:</span>
     <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="l l-Scalar l-Scalar-Plain">volumes</span><span class="p p-Indicator">:</span>
       <span class="c1"># This is equivalent to .:/code:cached</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">local</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">.</span>
-        <span class="l l-Scalar l-Scalar-Plain">container</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/code</span>
-        <span class="l l-Scalar l-Scalar-Plain">options</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">cached</span>
+      <span class="p p-Indicator">-</span> <span class="nt">local</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/code</span>
+        <span class="nt">options</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cached</span>
 </pre></div></p>
 </li>
 </ul>
@@ -1068,13 +1089,13 @@ Dockerfile instruction).</p>
 </li>
 <li>
 <p>An expanded format:
-  <div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">containers</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">my-container</span><span class="p p-Indicator">:</span>
+  <div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">my-container</span><span class="p">:</span>
     <span class="l l-Scalar l-Scalar-Plain">...</span>
     <span class="l l-Scalar l-Scalar-Plain">ports</span><span class="p p-Indicator">:</span>
       <span class="c1"># This is equivalent to 1234:5678</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">local</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">1234</span>
-        <span class="l l-Scalar l-Scalar-Plain">container</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">5678</span>
+      <span class="p p-Indicator">-</span> <span class="nt">local</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1234</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5678</span>
 </pre></div></p>
 </li>
 </ul>
@@ -1122,40 +1143,40 @@ by that user, so this is less of an issue. However, for consistency, the same co
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <p>For more examples and real-world scenarios, take a look at the <a href="../SampleProjects.html">sample projects</a>.</p>
 <h3 id="minimal-configuration-with-existing-image">Minimal configuration with existing image<a class="headerlink" href="#minimal-configuration-with-existing-image" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">containers</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">build-env</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">openjdk:8u141-jdk</span>
+<div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">build-env</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openjdk:8u141-jdk</span>
 </pre></div>
 
 <p>Running the container <code>build-env</code> will launch a container that uses the <code>openjdk:8u141-jdk</code> image.</p>
 <p>If the image has not already been pulled, batect will pull it before starting the container.</p>
 <h3 id="minimal-configuration-with-dockerfile">Minimal configuration with Dockerfile<a class="headerlink" href="#minimal-configuration-with-dockerfile" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">containers</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">build-env</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">build_directory</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dev-infrastructure/build-env</span>
+<div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">build-env</span><span class="p">:</span>
+    <span class="nt">build_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dev-infrastructure/build-env</span>
 </pre></div>
 
 <p>Running the container <code>build-env</code> will first build the Dockerfile in the <code>dev-infrastructure/build-env</code> directory, then run the resulting image.</p>
 <p>The <a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#build-cache">Docker build cache</a> is used during the build process,
 so if the image definition has not changed since the last build, the image will not be rebuilt, saving time.</p>
 <h3 id="container-with-custom-command">Container with custom command<a class="headerlink" href="#container-with-custom-command" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">containers</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">build-env</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ruby:2.4.3</span>
-    <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">echo &#39;Hello world&#39;</span>
+<div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">build-env</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ruby:2.4.3</span>
+    <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">echo &#39;Hello world&#39;</span>
 </pre></div>
 
 <p>Running the container <code>build-env</code> will run the command <code>echo 'Hello world'</code>, and not the default command specified in the <code>ruby:2.4.3</code> image.</p>
 <p>This command could, however, be overridden by specifying a <a href="Tasks.html#run"><code>command</code> at the task level</a>.</p>
 <h3 id="container-with-environment-variables">Container with environment variables<a class="headerlink" href="#container-with-environment-variables" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">containers</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">build-env</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ruby:2.4.3</span>
-    <span class="l l-Scalar l-Scalar-Plain">environment</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">COUNTRY</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Australia</span>
-      <span class="l l-Scalar l-Scalar-Plain">SUPER_SECRET_VALUE</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">$SECRET_PASSWORD</span>
-      <span class="l l-Scalar l-Scalar-Plain">ANOTHER_SECRET_VALUE</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">${SECRET_PASSWORD}</span>
-      <span class="l l-Scalar l-Scalar-Plain">OPTIMISATION_LEVEL</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">${HOST_OPTIMISATION_LEVEL:-none}</span>
+<div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">build-env</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ruby:2.4.3</span>
+    <span class="nt">environment</span><span class="p">:</span>
+      <span class="nt">COUNTRY</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Australia</span>
+      <span class="nt">SUPER_SECRET_VALUE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$SECRET_PASSWORD</span>
+      <span class="nt">ANOTHER_SECRET_VALUE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${SECRET_PASSWORD}</span>
+      <span class="nt">OPTIMISATION_LEVEL</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">${HOST_OPTIMISATION_LEVEL:-none}</span>
 </pre></div>
 
 <p>Running the container <code>build-env</code> will launch a container that uses the <code>ruby:2.4.3</code> image with the following environment variables:</p>
@@ -1175,21 +1196,21 @@ so if the image definition has not changed since the last build, the image will 
 </ul>
 <p>These environment variables could be overridden (and added to) with <a href="Tasks.html#run"><code>environment</code> at the task level</a>.</p>
 <h3 id="container-with-working-directory">Container with working directory<a class="headerlink" href="#container-with-working-directory" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">containers</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">build-env</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ruby:2.4.3</span>
-    <span class="l l-Scalar l-Scalar-Plain">working_directory</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/somewhere</span>
+<div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">build-env</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ruby:2.4.3</span>
+    <span class="nt">working_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/somewhere</span>
 </pre></div>
 
 <p>Running the container <code>build-env</code> will launch a container that uses the <code>ruby:2.4.3</code> image with the working directory set to <code>/somewhere</code>.</p>
 <h3 id="container-with-volume-mounts">Container with volume mounts<a class="headerlink" href="#container-with-volume-mounts" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">containers</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">build-env</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ruby:2.4.3</span>
-    <span class="l l-Scalar l-Scalar-Plain">volumes</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">local</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">.</span>
-        <span class="l l-Scalar l-Scalar-Plain">container</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/code</span>
-        <span class="l l-Scalar l-Scalar-Plain">options</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">cached</span>
+<div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">build-env</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ruby:2.4.3</span>
+    <span class="nt">volumes</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">local</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/code</span>
+        <span class="nt">options</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cached</span>
 </pre></div>
 
 <p>Running the container <code>build-env</code> will launch a container that uses the <code>ruby:2.4.3</code> image, with the directory containing the batect configuration file
@@ -1198,12 +1219,12 @@ mounted into the container at <code>/code</code>.</p>
 available inside the container at <code>/code</code>.</p>
 <p>See <a href="../tips/Performance.html#io-performance">this page</a> for more information on why using <code>cached</code> volume mounts may be worthwhile.</p>
 <h3 id="container-with-ports">Container with ports<a class="headerlink" href="#container-with-ports" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">containers</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">build-env</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ruby:2.4.3</span>
-    <span class="l l-Scalar l-Scalar-Plain">ports</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">local</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">123</span>
-        <span class="l l-Scalar l-Scalar-Plain">container</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">456</span>
+<div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">build-env</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ruby:2.4.3</span>
+    <span class="nt">ports</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">local</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">123</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">456</span>
 </pre></div>
 
 <p>Running the container <code>build-env</code> will launch a container that uses the <code>ruby:2.4.3</code> image, with the port 123 on the host mapped to port 456 inside the
@@ -1214,25 +1235,25 @@ Any container started as part of a task will be able to access any port on any o
 if a process running in another container wants to access the application running on port 456 in the <code>build-env</code> container, it would access it at <code>build-env:456</code>,
 not <code>build-env:123</code>.</p>
 <h3 id="container-with-dependencies">Container with dependencies<a class="headerlink" href="#container-with-dependencies" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">containers</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">application</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">build_directory</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dev-infrastructure/application</span>
-    <span class="l l-Scalar l-Scalar-Plain">dependencies</span><span class="p p-Indicator">:</span>
+<div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">application</span><span class="p">:</span>
+    <span class="nt">build_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dev-infrastructure/application</span>
+    <span class="nt">dependencies</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">database</span>
 
-  <span class="l l-Scalar l-Scalar-Plain">database</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">build_directory</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dev-infrastructure/database</span>
+  <span class="nt">database</span><span class="p">:</span>
+    <span class="nt">build_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dev-infrastructure/database</span>
 </pre></div>
 
 <p>Running the container <code>application</code> will first run the <code>database</code> container and <a href="../tips/WaitingForDependenciesToBeReady.html">wait for it to become healthy</a>
 before starting the <code>application</code> container.</p>
 <h3 id="container-that-runs-as-the-current-user">Container that runs as the current user<a class="headerlink" href="#container-that-runs-as-the-current-user" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">containers</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">build-env</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ruby:2.4.3</span>
-    <span class="l l-Scalar l-Scalar-Plain">run_as_current_user</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">enabled</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-      <span class="l l-Scalar l-Scalar-Plain">home_directory</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/home/container-user</span>
+<div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">build-env</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ruby:2.4.3</span>
+    <span class="nt">run_as_current_user</span><span class="p">:</span>
+      <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+      <span class="nt">home_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/home/container-user</span>
 </pre></div>
 
 <p>Running the container <code>build-env</code> will launch a container that uses the <code>ruby:2.4.3</code> image with <a href="../tips/BuildArtifactsOwnedByRoot.html">run as current user mode</a>
@@ -1304,7 +1325,6 @@ enabled.</p>
           Material for MkDocs</a>
       </div>
       
-        
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
@@ -1312,21 +1332,15 @@ enabled.</p>
     
   </div>
 
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.583bbe55.js"></script>
+      <script src="../assets/javascripts/application.d9aa80ab.js"></script>
       
-      <script>app.initialize({version:"1.0.3",url:{base:".."}})</script>
-      
-    
-    
-      
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-63947227-2","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
     
   </body>

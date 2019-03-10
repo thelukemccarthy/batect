@@ -21,6 +21,9 @@
       "minLength": 1
     }
   },
+  "patternProperties": {
+    "^\\.": { }
+  },
   "definitions": {
     "containers": {
       "type": "object",
@@ -108,6 +111,11 @@
         "description": {
           "type": "string",
           "description": "Description shown when running `batect --list-tasks`",
+          "minLength": 1
+        },
+        "group": {
+          "type": "string",
+          "description": "Name used to group tasks when running `batect --list-tasks`",
           "minLength": 1
         },
         "dependencies": {

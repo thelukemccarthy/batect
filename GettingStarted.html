@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="no-js">
   <head>
     
@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.4">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/application.451f80e5.css">
+      <link rel="stylesheet" href="assets/stylesheets/application.982221ab.css">
       
-        <link rel="stylesheet" href="assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="assets/javascripts/modernizr.1f0bcf2b.js"></script>
     
     
       
@@ -67,6 +67,35 @@
       
     
     <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-63947227-2", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -125,22 +154,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                batect documentation
-              </span>
-              <span class="md-header-nav__topic">
-                Getting started tutorial
-              </span>
-            
+            <span class="md-header-nav__topic">
+              batect documentation
+            </span>
+            <span class="md-header-nav__topic">
+              Getting started tutorial
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -163,7 +189,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -174,20 +199,18 @@
 
   
 
-
-  <a href="https://github.com/charleskorn/batect/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      charleskorn/batect
+<a href="https://github.com/charleskorn/batect/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    charleskorn/batect
+  </div>
+</a>
           </div>
         </div>
       
@@ -223,20 +246,18 @@
 
   
 
-
-  <a href="https://github.com/charleskorn/batect/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      charleskorn/batect
+<a href="https://github.com/charleskorn/batect/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    charleskorn/batect
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -677,35 +698,35 @@ tests. This example is for a Java project that uses Gradle, and assumes that you
 <ol>
 <li>
 <p>Create a <code>batect.yml</code> configuration file in the root of your project. For example:</p>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">containers</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">build-env</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">image</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">openjdk:8u141-jdk</span>
-    <span class="l l-Scalar l-Scalar-Plain">volumes</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">local</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">.</span>
-        <span class="l l-Scalar l-Scalar-Plain">container</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/code</span>
-        <span class="l l-Scalar l-Scalar-Plain">options</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">cached</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">local</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">.gradle-cache</span>
-        <span class="l l-Scalar l-Scalar-Plain">container</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/home/container-user/.gradle</span>
-        <span class="l l-Scalar l-Scalar-Plain">options</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">cached</span>
-    <span class="l l-Scalar l-Scalar-Plain">working_directory</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/code</span>
-    <span class="l l-Scalar l-Scalar-Plain">environment</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">GRADLE_OPTS</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">-Dorg.gradle.daemon=false</span>
-    <span class="l l-Scalar l-Scalar-Plain">run_as_current_user</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">enabled</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-      <span class="l l-Scalar l-Scalar-Plain">home_directory</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">/home/container-user</span>
+<div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">build-env</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">openjdk:8u141-jdk</span>
+    <span class="nt">volumes</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">local</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/code</span>
+        <span class="nt">options</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cached</span>
+      <span class="p p-Indicator">-</span> <span class="nt">local</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.gradle-cache</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/home/container-user/.gradle</span>
+        <span class="nt">options</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cached</span>
+    <span class="nt">working_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/code</span>
+    <span class="nt">environment</span><span class="p">:</span>
+      <span class="nt">GRADLE_OPTS</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">-Dorg.gradle.daemon=false</span>
+    <span class="nt">run_as_current_user</span><span class="p">:</span>
+      <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+      <span class="nt">home_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/home/container-user</span>
 
-<span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">build</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">description</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Build the application.</span>
-    <span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">container</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">build-env</span>
-      <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">./gradlew assembleDist</span>
+<span class="nt">tasks</span><span class="p">:</span>
+  <span class="nt">build</span><span class="p">:</span>
+    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Build the application.</span>
+    <span class="nt">run</span><span class="p">:</span>
+      <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">build-env</span>
+      <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./gradlew assembleDist</span>
 
-  <span class="l l-Scalar l-Scalar-Plain">unitTest</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">description</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Run the unit tests.</span>
-    <span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">container</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">build-env</span>
-      <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">./gradlew test</span>
+  <span class="nt">unitTest</span><span class="p">:</span>
+    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Run the unit tests.</span>
+    <span class="nt">run</span><span class="p">:</span>
+      <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">build-env</span>
+      <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./gradlew test</span>
 </pre></div>
 
 <p>There's a bit going on here, so let's break it down:</p>
@@ -771,7 +792,7 @@ the container starts, so if we copy our <code>create-structure.sql</code> script
 our database structure will be created. So our Dockerfile now looks like:</p>
 <div class="codehilite"><pre><span></span><span class="k">FROM</span><span class="s"> postgres:9.6.2</span>
 
-COPY create-structure.sql /docker-entrypoint-initdb.d/
+<span class="k">COPY</span> create-structure.sql /docker-entrypoint-initdb.d/
 </pre></div>
 
 <p>There's one last thing we need to think about though. When Docker starts our database container, all we know is that the container has
@@ -787,22 +808,22 @@ database - if that succeeds, we can assume that the database is up and running. 
 <div class="codehilite"><pre><span></span><span class="k">FROM</span><span class="s"> postgres:9.6.2</span>
 
 <span class="k">RUN</span> mkdir -p /tools
-COPY health-check.sh /tools/
-HEALTHCHECK --interval<span class="o">=</span>2s CMD /tools/health-check.sh
+<span class="k">COPY</span> health-check.sh /tools/
+<span class="k">HEALTHCHECK</span> --interval<span class="o">=</span>2s <span class="k">CMD</span> /tools/health-check.sh
 
-COPY create-structure.sql /docker-entrypoint-initdb.d/
+<span class="k">COPY</span> create-structure.sql /docker-entrypoint-initdb.d/
 </pre></div>
 
 <p>So, now we have a Dockerfile that describes how to start up our database, and how to tell when it's ready for use. Now we just need to configure
 batect to run our tests.</p>
 <p>First of all, let's define our database container:</p>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">containers</span><span class="p p-Indicator">:</span>
+<div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
 
   <span class="l l-Scalar l-Scalar-Plain">...</span>
 
   <span class="l l-Scalar l-Scalar-Plain">database</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">build_directory</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dev-infrastructure/database</span>
-    <span class="l l-Scalar l-Scalar-Plain">environment</span><span class="p p-Indicator">:</span>
+    <span class="nt">build_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dev-infrastructure/database</span>
+    <span class="nt">environment</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">POSTGRES_USER=international-transfers-service-user</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">POSTGRES_PASSWORD=TheSuperSecretPassword</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">POSTGRES_DB=international-transfers-service</span>
@@ -811,16 +832,16 @@ batect to run our tests.</p>
 <p>This uses the environment variables defined by the Postgres image to set the username, password and database name to use to connect to it. We
 could have specified them in the Dockerfile with <code>ENV</code> statements, but this works as well.</p>
 <p>Then we just need to define our integration test task:</p>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
+<div class="codehilite"><pre><span></span><span class="nt">tasks</span><span class="p">:</span>
 
   <span class="l l-Scalar l-Scalar-Plain">...</span>
 
   <span class="l l-Scalar l-Scalar-Plain">integrationTest</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">description</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Run the integration tests.</span>
-    <span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">container</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">build-env</span>
-      <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">./gradlew integrationTest</span>
-    <span class="l l-Scalar l-Scalar-Plain">start</span><span class="p p-Indicator">:</span>
+    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Run the integration tests.</span>
+    <span class="nt">run</span><span class="p">:</span>
+      <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">build-env</span>
+      <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./gradlew integrationTest</span>
+    <span class="nt">start</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">database</span>
 </pre></div>
 
@@ -834,29 +855,29 @@ were running directly on your machine though.) This means that the integration t
 you started.</p>
 <p>Similarly, if we want to run some journey tests that test our application end-to-end, we just need to create a Dockerfile for our application,
 then define it in <code>batect.yml</code>:</p>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">containers</span><span class="p p-Indicator">:</span>
+<div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
 
   <span class="l l-Scalar l-Scalar-Plain">...</span>
 
   <span class="l l-Scalar l-Scalar-Plain">international-transfers-service</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">build_directory</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">dev-infrastructure/international-transfers-service</span>
-    <span class="l l-Scalar l-Scalar-Plain">dependencies</span><span class="p p-Indicator">:</span>
+    <span class="nt">build_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dev-infrastructure/international-transfers-service</span>
+    <span class="nt">dependencies</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">database</span>
 </pre></div>
 
 <p>...and then add a task:</p>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">tasks</span><span class="p p-Indicator">:</span>
+<div class="codehilite"><pre><span></span><span class="nt">tasks</span><span class="p">:</span>
 
   <span class="l l-Scalar l-Scalar-Plain">...</span>
 
   <span class="l l-Scalar l-Scalar-Plain">journeyTest</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">description</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Run the journey tests.</span>
-    <span class="l l-Scalar l-Scalar-Plain">run</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">container</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">build-env</span>
-      <span class="l l-Scalar l-Scalar-Plain">command</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">./gradlew journeyTest</span>
-    <span class="l l-Scalar l-Scalar-Plain">start</span><span class="p p-Indicator">:</span>
+    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Run the journey tests.</span>
+    <span class="nt">run</span><span class="p">:</span>
+      <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">build-env</span>
+      <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./gradlew journeyTest</span>
+    <span class="nt">start</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">international-transfers-service</span>
-    <span class="l l-Scalar l-Scalar-Plain">prerequisites</span><span class="p p-Indicator">:</span>
+    <span class="nt">prerequisites</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">build</span>
 </pre></div>
 
@@ -934,29 +955,22 @@ you can take a look at.</p>
           Material for MkDocs</a>
       </div>
       
-        
   <div class="md-footer-social">
-    <link rel="stylesheet" href="./assets/fonts/font-awesome.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.css">
     
       <a href="https://github.com/charleskorn/batect" class="md-footer-social__link fa fa-github"></a>
     
   </div>
 
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="assets/javascripts/application.583bbe55.js"></script>
+      <script src="assets/javascripts/application.d9aa80ab.js"></script>
       
-      <script>app.initialize({version:"1.0.3",url:{base:"."}})</script>
-      
-    
-    
-      
-        <script>!function(e,a,t,n,o,c,i){e.GoogleAnalyticsObject=o,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),i=a.getElementsByTagName(t)[0],c.async=1,c.src="https://www.google-analytics.com/analytics.js",i.parentNode.insertBefore(c,i)}(window,document,"script",0,"ga"),ga("create","UA-63947227-2","auto"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(e){e.host!=document.location.host&&e.addEventListener("click",function(){var a=e.getAttribute("data-md-action")||"follow";ga("send","event","outbound",a,e.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
       
     
   </body>
