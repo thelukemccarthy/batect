@@ -390,6 +390,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#build_args" title="build_args" class="md-nav__link">
+    build_args
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#command" title="command" class="md-nav__link">
     command
   </a>
@@ -827,6 +834,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#build_args" title="build_args" class="md-nav__link">
+    build_args
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#command" title="command" class="md-nav__link">
     command
   </a>
@@ -1016,6 +1030,10 @@ everywhere. For example, use <code>alpine:3.7</code>, not <code>alpine</code> or
 <h2 id="build_directory"><code>build_directory</code><a class="headerlink" href="#build_directory" title="Permanent link">&para;</a></h2>
 <p>Path (relative to the configuration file's directory) to a directory containing a Dockerfile to build and use as an image for this container.
 <strong>One of <code>image</code> or <code>build_directory</code> is required.</strong></p>
+<h2 id="build_args"><code>build_args</code><a class="headerlink" href="#build_args" title="Permanent link">&para;</a></h2>
+<p>List of build args (in <code>name: value</code> format) to use when building the image in <code>build_directory</code>.</p>
+<p>Each build arg must be defined in the Dockerfile with an <code>ARG</code> instruction otherwise the value provided will have no effect.</p>
+<p>Available since v0.28.</p>
 <h2 id="command"><code>command</code><a class="headerlink" href="#command" title="Permanent link">&para;</a></h2>
 <p>Command to run when the container starts.</p>
 <p>If not provided, the default command for the image will be run.</p>
@@ -1041,7 +1059,6 @@ directly.</p>
 </div>
 <h2 id="environment"><code>environment</code><a class="headerlink" href="#environment" title="Permanent link">&para;</a></h2>
 <p>List of environment variables (in <code>name: value</code> format) for the container.</p>
-<p>Values that are YAML booleans or numbers should be wrapped in double quotes.</p>
 <p>Prior to v0.21, environment variables were required to be supplied in <code>name=value</code> format.</p>
 <h3 id="environment-variable-substitution">Environment variable substitution<a class="headerlink" href="#environment-variable-substitution" title="Permanent link">&para;</a></h3>
 <p>You can pass environment variables from the host (ie. where you run batect) to the container by using any of the following formats:</p>
@@ -1053,12 +1070,14 @@ directly.</p>
 <li>
 <p><code>${&lt;name&gt;:-&lt;default&gt;}</code>: use the value of <code>&lt;name&gt;</code> from the host as the value inside the container.</p>
 <p>If the referenced host variable is not present, <code>&lt;default&gt;</code> is used instead.</p>
+<p><code>&lt;default&gt;</code> can be empty, so <code>${&lt;name&gt;:-}</code> will use the value of <code>&lt;name&gt;</code> from the host if it is
+set, or a blank value if it is not set.</p>
 </li>
 </ul>
 <p>For example, to set <code>SUPER_SECRET_PASSWORD</code> in the container to the value of the <code>MY_PASSWORD</code> variable on the host, use
 <code>SUPER_SECRET_PASSWORD: $MY_PASSWORD</code> or <code>SUPER_SECRET_PASSWORD: ${MY_PASSWORD}</code>. Or, to default it to <code>insecure</code> if
 <code>MY_PASSWORD</code> is not set, use <code>SUPER_SECRET_PASSWORD: ${MY_PASSWORD:-insecure}</code>.</p>
-<p>Substitutions in the middle of values is not supported (eg. <code>SUPER_SECRET_PASSWORD: My password is $MY_PASSWORD</code> will not work).</p>
+<p>Substitution in the middle of values is not supported (eg. <code>SUPER_SECRET_PASSWORD: My password is $MY_PASSWORD</code> will not work).</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Be careful when using this - by relying on the host's environment variables, you are introducing inconsistency to how the container
