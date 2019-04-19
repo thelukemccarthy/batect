@@ -487,6 +487,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#enable_init_process" title="enable_init_process" class="md-nav__link">
+    enable_init_process
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" title="Examples" class="md-nav__link">
     Examples
   </a>
@@ -553,6 +560,13 @@
           <li class="md-nav__item">
   <a href="#container-that-runs-as-the-current-user" title="Container that runs as the current user" class="md-nav__link">
     Container that runs as the current user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-that-runs-with-a-dockers-default-init-process-enabled" title="Container that runs with a Docker's default init process enabled" class="md-nav__link">
+    Container that runs with a Docker's default init process enabled
   </a>
   
 </li>
@@ -639,8 +653,32 @@
 
 
   <li class="md-nav__item">
+    <a href="../tools/Golang.html" title="Golang" class="md-nav__link">
+      Golang
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../tools/Java.html" title="Java" class="md-nav__link">
       Java
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/Node.html" title="Node.js" class="md-nav__link">
+      Node.js
     </a>
   </li>
 
@@ -938,6 +976,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#enable_init_process" title="enable_init_process" class="md-nav__link">
+    enable_init_process
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" title="Examples" class="md-nav__link">
     Examples
   </a>
@@ -1004,6 +1049,13 @@
           <li class="md-nav__item">
   <a href="#container-that-runs-as-the-current-user" title="Container that runs as the current user" class="md-nav__link">
     Container that runs as the current user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-that-runs-with-a-dockers-default-init-process-enabled" title="Container that runs with a Docker's default init process enabled" class="md-nav__link">
+    Container that runs with a Docker's default init process enabled
   </a>
   
 </li>
@@ -1200,6 +1252,12 @@ by that user, so this is less of an issue. However, for consistency, the same co
 <h2 id="privileged"><code>privileged</code><a class="headerlink" href="#privileged" title="Permanent link">&para;</a></h2>
 <p>Run the container in <a href="https://docs.docker.com/engine/reference/commandline/run/#full-container-capabilities---privileged">privileged mode</a>.</p>
 <p>Available since v0.29.</p>
+<h2 id="enable_init_process"><code>enable_init_process</code><a class="headerlink" href="#enable_init_process" title="Permanent link">&para;</a></h2>
+<p>Set to <code>true</code> to pass the <a href="https://docs.docker.com/engine/reference/run/#specify-an-init-process"><code>--init</code></a> flag when running the container.
+This creates the container with a simple PID 1 process to handle the responsibilities of the init system, which is required for some applications to behave correctly.</p>
+<p><a href="https://engineeringblog.yelp.com/2016/01/dumb-init-an-init-for-docker.html">Read this article</a> if you're interested in more information about the behaviour
+of different processes running as PID 1 and why this flag was introduced.</p>
+<p>Available since v0.30.</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <p>For more examples and real-world scenarios, take a look at the <a href="../SampleProjects.html">sample projects</a>.</p>
 <h3 id="minimal-configuration-with-existing-image">Minimal configuration with existing image<a class="headerlink" href="#minimal-configuration-with-existing-image" title="Permanent link">&para;</a></h3>
@@ -1318,6 +1376,18 @@ before starting the <code>application</code> container.</p>
 
 <p>Running the container <code>build-env</code> will launch a container that uses the <code>ruby:2.4.3</code> image with <a href="../tips/BuildArtifactsOwnedByRoot.html">run as current user mode</a>
 enabled.</p>
+<h3 id="container-that-runs-with-a-dockers-default-init-process-enabled">Container that runs with a Docker's default init process enabled<a class="headerlink" href="#container-that-runs-with-a-dockers-default-init-process-enabled" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">build-env</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">node:10.10.0-alpine</span>
+    <span class="nt">volumes</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">local</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.</span>
+        <span class="nt">container</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/code</span>
+        <span class="nt">options</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cached</span>
+    <span class="nt">enable_init_process</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+
+<p>Running the container <code>build-env</code> will launch a container that uses the <code>node:10.10.0-alpine</code> image with Docker's default init process as PID 1.</p>
                 
                   
                 
