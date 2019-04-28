@@ -397,6 +397,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dockerfile" title="dockerfile" class="md-nav__link">
+    dockerfile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#command" title="command" class="md-nav__link">
     command
   </a>
@@ -482,6 +489,13 @@
         <li class="md-nav__item">
   <a href="#privileged" title="privileged" class="md-nav__link">
     privileged
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capabilities_to_add-and-capabilities_to_drop" title="capabilities_to_add and capabilities_to_drop" class="md-nav__link">
+    capabilities_to_add and capabilities_to_drop
   </a>
   
 </li>
@@ -886,6 +900,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dockerfile" title="dockerfile" class="md-nav__link">
+    dockerfile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#command" title="command" class="md-nav__link">
     command
   </a>
@@ -971,6 +992,13 @@
         <li class="md-nav__item">
   <a href="#privileged" title="privileged" class="md-nav__link">
     privileged
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capabilities_to_add-and-capabilities_to_drop" title="capabilities_to_add and capabilities_to_drop" class="md-nav__link">
+    capabilities_to_add and capabilities_to_drop
   </a>
   
 </li>
@@ -1097,9 +1125,13 @@ everywhere. For example, use <code>alpine:3.7</code>, not <code>alpine</code> or
 <p>Path (relative to the configuration file's directory) to a directory containing a Dockerfile to build and use as an image for this container.
 <strong>One of <code>image</code> or <code>build_directory</code> is required.</strong></p>
 <h2 id="build_args"><code>build_args</code><a class="headerlink" href="#build_args" title="Permanent link">&para;</a></h2>
-<p>List of build args (in <code>name: value</code> format) to use when building the image in <code>build_directory</code>.</p>
+<p>List of build args (in <code>name: value</code> format) to use when building the image in <a href="#build_directory"><code>build_directory</code></a>.</p>
 <p>Each build arg must be defined in the Dockerfile with an <code>ARG</code> instruction otherwise the value provided will have no effect.</p>
 <p>Available since v0.28.</p>
+<h2 id="dockerfile"><code>dockerfile</code><a class="headerlink" href="#dockerfile" title="Permanent link">&para;</a></h2>
+<p>Dockerfile (relative to <a href="#build_directory"><code>build_directory</code></a>) to use when building the image in <a href="#build_directory"><code>build_directory</code></a>. Defaults to <code>Dockerfile</code> if not set.</p>
+<p>The Dockerfile must be within <a href="#build_directory"><code>build_directory</code></a>.</p>
+<p>Available since v0.31.</p>
 <h2 id="command"><code>command</code><a class="headerlink" href="#command" title="Permanent link">&para;</a></h2>
 <p>Command to run when the container starts.</p>
 <p>If not provided, the default command for the image will be run.</p>
@@ -1251,7 +1283,12 @@ by that user, so this is less of an issue. However, for consistency, the same co
 <p>See <a href="../tips/BuildArtifactsOwnedByRoot.html">this page</a> for more information on the effects of this option and why it is necessary.</p>
 <h2 id="privileged"><code>privileged</code><a class="headerlink" href="#privileged" title="Permanent link">&para;</a></h2>
 <p>Run the container in <a href="https://docs.docker.com/engine/reference/commandline/run/#full-container-capabilities---privileged">privileged mode</a>.</p>
+<p>See also <a href="#capabilities_to_add-and-capabilities_to_drop"><code>capabilities_to_add</code> and <code>capabilities_to_drop</code></a>.</p>
 <p>Available since v0.29.</p>
+<h2 id="capabilities_to_add-and-capabilities_to_drop"><code>capabilities_to_add</code> and <code>capabilities_to_drop</code><a class="headerlink" href="#capabilities_to_add-and-capabilities_to_drop" title="Permanent link">&para;</a></h2>
+<p>Add or drop <a href="http://man7.org/linux/man-pages/man7/capabilities.7.html">capabilities</a> for the container.</p>
+<p>This is equivalent to passing <a href="https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities"><code>--cap-add</code> or <code>--cap-drop</code></a> to <code>docker run</code>.</p>
+<p>Available since v0.31.</p>
 <h2 id="enable_init_process"><code>enable_init_process</code><a class="headerlink" href="#enable_init_process" title="Permanent link">&para;</a></h2>
 <p>Set to <code>true</code> to pass the <a href="https://docs.docker.com/engine/reference/run/#specify-an-init-process"><code>--init</code></a> flag when running the container.
 This creates the container with a simple PID 1 process to handle the responsibilities of the init system, which is required for some applications to behave correctly.</p>
