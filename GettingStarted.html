@@ -830,10 +830,10 @@ journey test environments - environments that require spinning up real (or fake)
 <div class="codehilite"><pre><span></span><span class="k">FROM</span><span class="s"> postgres:9.6.2</span>
 </pre></div>
 
-<p>Save this as <code>dev-infrastructure/database/Dockerfile</code>.</p>
+<p>Save this as <code>.batect/database/Dockerfile</code>.</p>
 <p>So far, so good - this is just like what we had before for the build environment. However, this will start an empty Postgres database,
 and our application probably needs at least a database and a table or two. Create a SQL script called <code>create-structure.sql</code> that creates
-your database tables and save it in the <code>dev-infrastructure/database</code> folder you just created.</p>
+your database tables and save it in the <code>.batect/database</code> folder you just created.</p>
 <p>We can then take advantage of a feature of the <a href="https://hub.docker.com/r/library/postgres/">standard Postgres image</a> to have this SQL
 script run when the container starts. Any <code>.sql</code> file in the <code>/docker-entrypoint-initdb.d</code> directory will automatically be run when
 the container starts, so if we copy our <code>create-structure.sql</code> script into that directory in the image, then whenever it is started,
@@ -848,8 +848,8 @@ started - we have no way to know if the database is actually ready for use. If w
 to start running those tests until it's actually ready to use. While Postgres is usually pretty fast to start up, it's not instantaneous,
 and other things can take anywhere from a few moments to a minute or two to start up and be ready. We can use
 <a href="https://docs.docker.com/engine/reference/builder/#healthcheck">Docker's health check feature</a> to indicate when a container is ready for use.</p>
-<p>In our case, we can take <a href="https://github.com/charleskorn/batect-sample-java/tree/master/dev-infrastructure/database/health-check.sh">the health check script</a>
-from the sample project and copy it into our <code>dev-infrastructure/database</code> folder. All it does is try to issue a simple query against the
+<p>In our case, we can take <a href="https://github.com/charleskorn/batect-sample-java/tree/master/.batect/database/health-check.sh">the health check script</a>
+from the sample project and copy it into our <code>.batect/database</code> folder. All it does is try to issue a simple query against the
 database - if that succeeds, we can assume that the database is up and running. (There's
 <a href="https://github.com/docker-library/healthcheck/">a collection of sample health check scripts provided by Docker</a> you can use.)</p>
 <p>Then we need to tell Docker where to find our health check script, so we need to add it to our Dockerfile:</p>
@@ -870,7 +870,7 @@ batect to run our tests.</p>
   <span class="l l-Scalar l-Scalar-Plain">...</span>
 
   <span class="l l-Scalar l-Scalar-Plain">database</span><span class="p p-Indicator">:</span>
-    <span class="nt">build_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dev-infrastructure/database</span>
+    <span class="nt">build_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.batect/database</span>
     <span class="nt">environment</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">POSTGRES_USER=international-transfers-service-user</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">POSTGRES_PASSWORD=TheSuperSecretPassword</span>
@@ -908,7 +908,7 @@ then define it in <code>batect.yml</code>:</p>
   <span class="l l-Scalar l-Scalar-Plain">...</span>
 
   <span class="l l-Scalar l-Scalar-Plain">international-transfers-service</span><span class="p p-Indicator">:</span>
-    <span class="nt">build_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">dev-infrastructure/international-transfers-service</span>
+    <span class="nt">build_directory</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.batect/international-transfers-service</span>
     <span class="nt">dependencies</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">database</span>
 </pre></div>
