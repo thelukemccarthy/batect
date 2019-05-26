@@ -761,11 +761,35 @@ You can, however, use a different name or location, and tell <code>batect</code>
 <p>The name of your project. Used to label any images built.</p>
 <p>If a project name is not provided, the project name is taken from the directory containing the configuration file. For example, if your configuration
 file is <code>/home/alex/projects/my-cool-app/batect.yml</code> and you do not provide a project name, <code>my-cool-app</code> will be used automatically.</p>
+<p>Project names must be valid Docker references:</p>
+<ul>
+<li>they must contain only:<ul>
+<li>lowercase letters</li>
+<li>digits</li>
+<li>dashes (<code>-</code>)</li>
+<li>single consecutive periods (<code>.</code>)</li>
+<li>one or two consecutive underscores (<code>_</code>)</li>
+</ul>
+</li>
+<li>they must not start or end with dashes, periods or underscores</li>
+</ul>
 <h2 id="containers"><code>containers</code><a class="headerlink" href="#containers" title="Permanent link">&para;</a></h2>
-<p>Definitions for each of the containers that make up your various environments.</p>
+<p>Definitions for each of the containers that make up your various environments, in <code>name: options</code> format.</p>
+<p>Container names must be valid Docker references:</p>
+<ul>
+<li>they must contain only:<ul>
+<li>lowercase letters</li>
+<li>digits</li>
+<li>dashes (<code>-</code>)</li>
+<li>single consecutive periods (<code>.</code>)</li>
+<li>one or two consecutive underscores (<code>_</code>)</li>
+</ul>
+</li>
+<li>they must not start or end with dashes, periods or underscores</li>
+</ul>
 <p><a href="Containers.html">Detailed reference for <code>containers</code></a></p>
 <h2 id="tasks"><code>tasks</code><a class="headerlink" href="#tasks" title="Permanent link">&para;</a></h2>
-<p>Definitions for each of your tasks, the actions you launch through batect.</p>
+<p>Definitions for each of your tasks, the actions you launch through batect, in <code>name: options</code> format.</p>
 <p><a href="Tasks.html">Detailed reference for <code>tasks</code></a></p>
 <h2 id="anchors-aliases-extensions-and-merging">Anchors, aliases, extensions and merging<a class="headerlink" href="#anchors-aliases-extensions-and-merging" title="Permanent link">&para;</a></h2>
 <p>Available since v0.27.</p>
