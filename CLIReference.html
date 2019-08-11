@@ -396,8 +396,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#disable-cleaning-up-after-a-startup-failure-no-cleanup-after-failure" title="Disable cleaning up after a startup failure (--no-cleanup-after-failure)" class="md-nav__link">
-    Disable cleaning up after a startup failure (--no-cleanup-after-failure)
+  <a href="#disable-cleaning-up-no-cleanup-no-cleanup-after-failure-and-no-cleanup-after-success" title="Disable cleaning up (--no-cleanup, --no-cleanup-after-failure and --no-cleanup-after-success)" class="md-nav__link">
+    Disable cleaning up (--no-cleanup, --no-cleanup-after-failure and --no-cleanup-after-success)
   </a>
   
 </li>
@@ -721,6 +721,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tips/Windows.html" title="Windows" class="md-nav__link">
+      Windows
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -791,8 +803,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#disable-cleaning-up-after-a-startup-failure-no-cleanup-after-failure" title="Disable cleaning up after a startup failure (--no-cleanup-after-failure)" class="md-nav__link">
-    Disable cleaning up after a startup failure (--no-cleanup-after-failure)
+  <a href="#disable-cleaning-up-no-cleanup-no-cleanup-after-failure-and-no-cleanup-after-success" title="Disable cleaning up (--no-cleanup, --no-cleanup-after-failure and --no-cleanup-after-success)" class="md-nav__link">
+    Disable cleaning up (--no-cleanup, --no-cleanup-after-failure and --no-cleanup-after-success)
   </a>
   
 </li>
@@ -935,11 +947,14 @@
 <p>Run a task by running <code>./batect &lt;task-name&gt;</code>. For example, to run <code>the-task</code>, run <code>./batect the-task</code>.</p>
 <p>You can also pass arguments to the task command by passing those arguments by running <code>./batect &lt;task-name&gt; -- &lt;args...&gt;</code>.
 For example, to run the task <code>the-task</code> with the arguments <code>arg1 arg2</code>, run <code>./batect the-task -- arg1 arg2</code>.</p>
-<h3 id="disable-cleaning-up-after-a-startup-failure-no-cleanup-after-failure">Disable cleaning up after a startup failure <small>(<code>--no-cleanup-after-failure</code>)</small><a class="headerlink" href="#disable-cleaning-up-after-a-startup-failure-no-cleanup-after-failure" title="Permanent link">&para;</a></h3>
+<h3 id="disable-cleaning-up-no-cleanup-no-cleanup-after-failure-and-no-cleanup-after-success">Disable cleaning up <small>(<code>--no-cleanup</code>, <code>--no-cleanup-after-failure</code> and <code>--no-cleanup-after-success</code>)</small><a class="headerlink" href="#disable-cleaning-up-no-cleanup-no-cleanup-after-failure-and-no-cleanup-after-success" title="Permanent link">&para;</a></h3>
 <p>By default, batect will automatically cleanup all containers and other resources it creates while running a task.
-However, sometimes it can be useful to leave all the created containers running to diagnose issues during startup, such as when
-a container does not report as healthy.</p>
-<p>Use this option to disable cleaning up all containers and other resources if a task fails to start for any reason.</p>
+However, sometimes it can be useful to leave all the created containers running to diagnose issues running a task.</p>
+<ul>
+<li>Use <code>--no-cleanup-after-failure</code> to not clean up if any task fails to start for any reason.</li>
+<li>Use <code>--no-cleanup-after-success</code> to not clean up the containers and other resources created for the main task (the one specified on the command line) if it succeeds.</li>
+<li>Use <code>--no-cleanup</code> to enable both of the above.</li>
+</ul>
 <p>Example:</p>
 <div class="codehilite"><pre><span></span>./batect --no-cleanup-after-failure the-task
 </pre></div>

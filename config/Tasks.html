@@ -682,6 +682,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tips/Windows.html" title="Windows" class="md-nav__link">
+      Windows
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -888,10 +900,10 @@ working directory is used.</p>
 </li>
 </ul>
 <h2 id="dependencies"><code>dependencies</code><a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
-<p>List of other containers that should be started and healthy before starting the task container given in <code>run</code>.</p>
+<p>List of other containers (not tasks) that should be started and healthy before starting the task container given in <code>run</code>.</p>
 <p>The behaviour is the same as if the dependencies were specified for the <code>dependencies</code> property of the task's container's definition.</p>
 <h2 id="prerequisites"><code>prerequisites</code><a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p>List of other tasks that should be run before running this task.</p>
+<p>List of other tasks that should be run to completion before running this task.</p>
 <p>If a prerequisite task finishes with a non-zero exit code, then neither this task nor any other prerequisites will be run.</p>
 <p>The tasks are run in the same order that they are declared in, unless reordering is required to satisfy the prerequisites of
 of of this task's prerequisites.</p>
