@@ -881,6 +881,14 @@ shell syntax features like <code>&amp;&amp;</code> from working. See the <a href
 for more information.</p>
 </li>
 <li>
+<p><code>entrypoint</code> Entrypoint to use to run the command.</p>
+<p>Overrides any entrypoint specified on the container definition and the image's default entrypoint. If no entrypoint is provided here,
+<a href="Containers.html#entrypoint">the entrypoint specified on the container definition</a> is used if there is one, otherwise the image's default entrypoint is used.</p>
+<p>Applies to whichever command takes precedence, whether that is the command specified on this task, the <a href="Containers.html#command">command specified on the container</a>,
+or the image's default command.</p>
+<p>Available since v0.37.</p>
+</li>
+<li>
 <p><code>environment</code> List of environment variables (in <code>name: value</code> format) to pass to the container, in addition to those defined on the
   container itself.</p>
 <p>If a variable is specified both here and on the container itself, the value given here will override the value defined on the container.</p>

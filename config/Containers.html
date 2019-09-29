@@ -398,6 +398,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#entrypoint" class="md-nav__link">
+    entrypoint
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#environment" class="md-nav__link">
     environment
   </a>
@@ -490,6 +497,13 @@
         <li class="md-nav__item">
   <a href="#enable_init_process" class="md-nav__link">
     enable_init_process
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional_hostnames" class="md-nav__link">
+    additional_hostnames
   </a>
   
 </li>
@@ -925,6 +939,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#entrypoint" class="md-nav__link">
+    entrypoint
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#environment" class="md-nav__link">
     environment
   </a>
@@ -1017,6 +1038,13 @@
         <li class="md-nav__item">
   <a href="#enable_init_process" class="md-nav__link">
     enable_init_process
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional_hostnames" class="md-nav__link">
+    additional_hostnames
   </a>
   
 </li>
@@ -1163,17 +1191,40 @@ directly.</p>
 <p>This means that if the entrypoint is not set or is not a shell, standard shell syntax features like <code>&amp;&amp;</code> might not work.</p>
 <p>See the Docker docs for <a href="https://docs.docker.com/engine/reference/builder/#cmd"><code>CMD</code></a> and
 <a href="https://docs.docker.com/engine/reference/builder/#entrypoint"><code>ENTRYPOINT</code></a> for more details.</p>
-<p>If you would like to use shell syntax features in your command, you have two options:</p>
+<p>If you would like to use shell syntax features in your command, you have four options:</p>
 <ol>
-<li>Set the entrypoint in the image to a shell. For example:
-   <div class="codehilite"><pre><span></span><span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&quot;/bin/sh&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">]</span>
-</pre></div></li>
+<li>
+<p>Create a shell script and invoke that instead of specifying the command directly.</p>
+</li>
 <li>
 <p>Wrap your command in a shell invocation.</p>
 <p>For example, if your command is <code>echo hello &amp;&amp; echo world</code>, set <code>command</code> to <code>sh -c 'echo hello &amp;&amp; echo world'</code>.</p>
 </li>
+<li>
+<p>Set the entrypoint in the image to a shell. For example:
+   <div class="codehilite"><pre><span></span><span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&quot;/bin/sh&quot;</span><span class="p">,</span> <span class="s2">&quot;-c&quot;</span><span class="p">]</span>
+</pre></div></p>
+</li>
+<li>
+<p>Set the <a href="#entrypoint">entrypoint</a> for the container to a shell. For example:
+   <div class="codehilite"><pre><span></span><span class="nt">containers</span><span class="p">:</span>
+  <span class="nt">container-1</span><span class="p">:</span>
+    <span class="nt">command</span><span class="p">:</span> <span class="s">&quot;&#39;echo</span><span class="nv"> </span><span class="s">hello</span><span class="nv"> </span><span class="s">&amp;&amp;</span><span class="nv"> </span><span class="s">echo</span><span class="nv"> </span><span class="s">world&#39;&quot;</span> <span class="c1"># Single quotes so that whole command is treated as a single argument when passed to sh, double quotes so that YAML preserves the single quotes</span>
+    <span class="nt">entrypoint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/bin/sh -c</span>
+</pre></div></p>
+</li>
 </ol>
+<p>Note that for both options 3 and 4, you must quote the command so that it is passed to <code>sh -c</code> as a single argument (we want the final command line to be <code>sh -c 'echo hello &amp;&amp; echo world'</code>, not
+<code>sh -c echo hello &amp;&amp; echo world</code>).</p>
 </div>
+<h2 id="entrypoint"><code>entrypoint</code><a class="headerlink" href="#entrypoint" title="Permanent link">&para;</a></h2>
+<p>Entrypoint to use to run the <a href="#command">command</a>.</p>
+<p>If not provided, the default entrypoint for the container will be used.</p>
+<p>Both of these can be overridden for an individual task by specifying an <a href="Tasks.html#entrypoint"><code>entrypoint</code> at the task level</a>.</p>
+<p>See the Docker docs for <a href="https://docs.docker.com/engine/reference/builder/#cmd"><code>CMD</code></a> and
+<a href="https://docs.docker.com/engine/reference/builder/#entrypoint"><code>ENTRYPOINT</code></a> for more information on how the entrypoint is used.
+batect will always convert the entrypoint provided here to the exec form when passed to Docker.</p>
+<p>Available since v0.37.</p>
 <h2 id="environment"><code>environment</code><a class="headerlink" href="#environment" title="Permanent link">&para;</a></h2>
 <p>List of environment variables (in <code>name: value</code> format) for the container.</p>
 <p>Prior to v0.21, environment variables were required to be supplied in <code>name=value</code> format.</p>
@@ -1316,6 +1367,9 @@ This creates the container with a simple PID 1 process to handle the responsibil
 <p><a href="https://engineeringblog.yelp.com/2016/01/dumb-init-an-init-for-docker.html">Read this article</a> if you're interested in more information about the behaviour
 of different processes running as PID 1 and why this flag was introduced.</p>
 <p>Available since v0.30.</p>
+<h2 id="additional_hostnames"><code>additional_hostnames</code><a class="headerlink" href="#additional_hostnames" title="Permanent link">&para;</a></h2>
+<p>List of hostnames to associate with this container, in addition to the default hostname (the name of the container).</p>
+<p>Available since v0.37.</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <p>For more examples and real-world scenarios, take a look at the <a href="../SampleProjects.html">sample projects</a>.</p>
 <h3 id="minimal-configuration-with-existing-image">Minimal configuration with existing image<a class="headerlink" href="#minimal-configuration-with-existing-image" title="Permanent link">&para;</a></h3>
